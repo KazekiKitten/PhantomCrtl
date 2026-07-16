@@ -140,7 +140,7 @@ static void phantom_feed(const HidNpadHandheldState *hh)
 
     st.battery_level = 4;            // full
     st.flags         = 1;            // BIT(0) IsPowered
-    st.buttons       = hh->buttons;  // HidNpadButton bits map 1:1
+    st.buttons       = hh->buttons & ~(HidNpadButton_StickLDown | HidNpadButton_StickLRight);
     st.analog_stick_l = hh->analog_stick_l;
     st.analog_stick_r = hh->analog_stick_r;
     // No six-axis: attribute stays 0.
@@ -197,17 +197,15 @@ int main(int argc, char* argv[])
             if (n > 0 && g_state.virt_attached)
                 phantom_feed(&hh);
 
-            // Apply/clear Handheld suppression only on transitions.
-            if (g_state.suppress != suppress_active) {
-                if (R_SUCCEEDED(phantom_suppress_apply(g_state.suppress)))
-                    suppress_active = g_state.suppress;
+            // Apply Handheld suppression only on enable transition.
+            if (g_state.suppress && !suppress_active) {
+                if (R_SUCCEEDED(phantom_suppress_apply(true)))
+                    suppress_active = true;
             }
         } else if (g_state.virt_attached) {
-            // Disabled at runtime: clear suppression, tear the pad back down.
-            if (suppress_active) {
-                phantom_suppress_apply(false);
-                suppress_active = false;
-            }
+            // Disabled at runtime: tear the pad back down; skip suppression restore
+            // as hiddbgApplyHdlsNpadAssignmentState may crash on some firmware.
+            suppress_active = false;
             phantom_detach_virtual();
         }
 
