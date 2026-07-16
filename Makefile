@@ -25,7 +25,7 @@ dist: all
 	@cp sysmodule/toolbox.json     dist/atmosphere/contents/$(PROGRAM_ID)/toolbox.json
 	@touch dist/atmosphere/contents/$(PROGRAM_ID)/flags/boot2.flag
 	@cp overlay/PhantomCtrl.ovl    dist/switch/.overlays/PhantomCtrl.ovl
-	@printf 'enabled=1\nsuppress=0\n' > dist/config/phantomctrl/config.ini
+	@printf 'enabled=1\n' > dist/config/phantomctrl/config.ini
 	@echo "dist/ ready. Copy its contents to the root of your SD card."
 
 clean:

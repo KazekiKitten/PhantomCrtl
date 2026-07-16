@@ -25,9 +25,8 @@ static bool parse_bool(const char *v)
     return v[0] == '1' || v[0] == 't' || v[0] == 'T' || v[0] == 'y' || v[0] == 'Y';
 }
 
-// Read enabled/suppress from disk into *st. Returns true if the file existed
-// and was read. Only the two writable knobs are consumed; status fields
-// (virt_attached, handle, counts) are owned by the sysmodule and never read.
+// Read enabled from disk into *st. Returns true if the file existed
+// and was read. Ignore any unknown keys (backward compatible with suppress).
 bool phantom_config_load(PhantomState *st)
 {
     FILE *f = fopen(PHANTOM_CONFIG_PATH, "r");
@@ -43,10 +42,9 @@ bool phantom_config_load(PhantomState *st)
         const char *key = line;
         const char *val = eq + 1;
 
+        // Only 'enabled' is recognized now - suppress was removed
         if (strncmp(key, "enabled", 7) == 0)
             st->enabled = parse_bool(val);
-        else if (strncmp(key, "suppress", 8) == 0)
-            st->suppress = parse_bool(val);
     }
     fclose(f);
     return true;
@@ -62,10 +60,9 @@ void phantom_config_save(const PhantomState *st)
         return;
 
     // Writable knobs first, then read-only status the overlay displays.
-    fprintf(f, "enabled=%d\n",        st->enabled ? 1 : 0);
-    fprintf(f, "suppress=%d\n",       st->suppress ? 1 : 0);
-    fprintf(f, "virt_attached=%d\n",  st->virt_attached ? 1 : 0);
+    fprintf(f, "enabled=%d\n",         st->enabled ? 1 : 0);
+    fprintf(f, "virt_attached=%d\n",   st->virt_attached ? 1 : 0);
     fprintf(f, "virt_handle=%016lx\n", st->virt_handle);
-    fprintf(f, "wireless_count=%u\n", st->wireless_count);
+    fprintf(f, "wireless_count=%u\n",  st->wireless_count);
     fclose(f);
 }

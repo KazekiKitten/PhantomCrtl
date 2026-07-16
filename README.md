@@ -21,9 +21,9 @@ see status without restarting anything.
   libnx with the fw 13+ Hdls session API).
 - **Virtual pad path is complete** and is the well-trodden part (same core
   mechanism as sys-con / InputRedirection).
-- **Handheld suppression is EXPERIMENTAL and unverified on hardware.** This is
-  the one genuinely uncertain feature — see [Testing plan](#testing-plan). It
-  is **off by default** so the base behavior is safe to try first.
+- Handheld suppression has been **removed** due to crashes on certain firmware
+  versions (it used unstable hiddbg API). If a game needs suppression to work,
+  it will require a future hid-mitm approach.
 - Overlay ↔ sysmodule uses a small **config file channel**, not a custom IPC
   service (deliberate — a malformed file is harmless; a buggy IPC server can
   hang the system service manager).
@@ -110,11 +110,9 @@ Reinsert the card and boot. The sysmodule auto-starts via `boot2.flag`.
 
 ## 4. Using it
 
-1. Open the overlay menu (default Tesla combo is **L + DPad-Down + R3**; Ultrahand
-   may differ).
+1. Open the overlay menu (Ultrahand default is **ZL + ZR + DPad-Down**).
 2. Select **PhantomCtrl**. You'll see:
    - **PhantomCtrl** toggle — master on/off (virtual pad feed).
-   - **Suppress Handheld** toggle — the experimental lever (leave OFF first).
    - **Status**: virtual pad attached/detached, its ID, and wireless pad count.
 3. With PhantomCtrl ON, start your 2-player game and pair your one wireless
    controller as usual (HOME → Controllers → Change Grip/Order).
@@ -123,24 +121,25 @@ Reinsert the card and boot. The sysmodule auto-starts via `boot2.flag`.
 
 ## Testing plan
 
-Do this in order. Stop at the first step that gives you working 2-player.
+Test on firmware 16.0.0+:
 
-1. **Base check (suppression OFF).** Enable PhantomCtrl, start the game. Does the
-   game now show a virtual Pro Controller as a player? Many games are happy with
-   virtual-FullKey + your wireless pad and just ignore the extra Handheld. If
-   2-player works here, you're done — leave suppression off.
+1. **Base check.** Enable PhantomCtrl, start the game. Does the game now show a
+   virtual Pro Controller as a player? Many games are happy with virtual-FullKey
+   + your wireless pad and just ignore the extra Handheld. If 2-player works
+   here, you're done.
 
-2. **If the game still won't give you two slots**, turn **Suppress Handheld** ON
-   and retest. This asks the system to re-evaluate npad slot ownership so the raw
-   Handheld stops claiming a slot.
+2. **If the game still won't give you two slots**, the game is hard-binding raw
+   Handheld to P1 and this will require a `hid-mitm` approach (future work).
 
-3. **If it still fails**, the game is hard-binding raw Handheld to P1 and a
-   virtual-device approach can't fully hide it. That would require a `hid-mitm`
-   approach (intercepting HID system-wide) — a larger, riskier change. Tell me
-   which game and we'll decide whether it's worth it.
+---
 
-Please report which of the three you land on — that tells us whether suppression
-actually works on real hardware, which is the main open question.
+## Installation notes
+
+- **Ultrahand required:** For firmware 16.0.0+, install Ultrahand instead of
+  Tesla Menu (see https://github.com/ppkantorski/Ultrahand-Overlay). The included
+  `tesla.hpp` may cause error 2168-0002 on newer firmware.
+- If you see error 2168-0002 when opening overlays, your Tesla/Menu setup is
+  outdated — update to Ultrahand or a compatible Tesla version.
 
 ---
 
@@ -150,11 +149,9 @@ actually works on real hardware, which is the main open question.
   This is consistent with how sys-con / InputRedirection are treated.
 - **Brick / save-corruption risk: none from this code.** It writes only
   `/config/phantomctrl/config.ini` on the SD card. No NAND, no saves.
-- **Realistic worst case:** a bug in the input path hangs a game or drops a
-  controller. Mitigations: it runs as a *contained* sysmodule (not a system-wide
-  mitm), and the overlay toggle kills the virtual pad instantly. If something
-  feels off, toggle PhantomCtrl OFF, or disable the module in ovl-sysmodules
-  (no reboot needed — `requires_reboot` is false).
+- The virtual controller is attached once at startup and stays attached — toggling
+  only controls whether input is forwarded. This avoids handle-leak crashes that
+  occur when attach/detach cycles corrupt the HDLS work buffer.
 
 ---
 
@@ -170,13 +167,22 @@ PhantomCtrl/
 │   └── source/
 │       ├── phantom.h     shared defs + runtime state struct
 │       ├── main.c        init, poll loop, virtual pad feed
-│       ├── suppress.c    experimental Handheld suppression
 │       └── config.c      SD config-file read/write channel
 └── overlay/
     ├── Makefile
-    ├── include/          tesla.hpp + stb_truetype.h (fetched)
+    ├── include/          tesla.hpp + stb_truetype.h
     └── source/main.cpp   Tesla overlay UI
 ```
+
+## Migration to Ultrahand
+
+On firmware 16.0.0+, the Tesla overlay may crash with error 2168-0002.
+To migrate to Ultrahand:
+
+1. Download `sdout.zip` from https://github.com/ppkantorski/Ultrahand-Overlay/releases
+2. Extract to SD card root (replaces Tesla Menu)
+3. Place `PhantomCtrl.ovl` in `/switch/.overlays/`
+4. Use Ultrahand hotkey (default: ZL + ZR + DDown) to open the menu
 
 ## Title ID
 

@@ -19,7 +19,6 @@
 // Runtime state shared between the worker thread and (later) the IPC service.
 typedef struct {
     bool enabled;          // master on/off: feed the virtual pad
-    bool suppress;         // hide the raw Handheld npad from games
     bool virt_attached;    // is our virtual FullKey device currently attached
     u32  wireless_count;   // number of real (non-handheld) pads seen
     u64  virt_handle;      // HiddbgHdlsHandle.handle of our virtual device
