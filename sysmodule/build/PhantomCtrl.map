@@ -3439,646 +3439,645 @@ Linker script and memory map
  *(.text.startup .text.startup.*)
  *fill*         0x0000000000000174        0xc 
  .text.startup.main
-                0x0000000000000180      0x20c main.o
+                0x0000000000000180      0x200 main.o
                 0x0000000000000180                main
  *(.text.hot .text.hot.*)
  *(.text .stub .text.* .gnu.linkonce.t.*)
- *fill*         0x000000000000038c       0x14 
  .text.__do_global_dtors_aux
-                0x00000000000003a0       0x50 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/crtbegin.o
- *fill*         0x00000000000003f0       0x10 
+                0x0000000000000380       0x50 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/crtbegin.o
+ *fill*         0x00000000000003d0       0x10 
  .text.frame_dummy
-                0x0000000000000400       0x24 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/crtbegin.o
- *fill*         0x0000000000000424        0xc 
+                0x00000000000003e0       0x24 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/crtbegin.o
+ *fill*         0x0000000000000404        0xc 
  .text.phantom_config_load
-                0x0000000000000430      0x164 config.o
-                0x0000000000000430                phantom_config_load
- *fill*         0x0000000000000594        0xc 
+                0x0000000000000410      0x164 config.o
+                0x0000000000000410                phantom_config_load
+ *fill*         0x0000000000000574        0xc 
  .text.phantom_config_save
-                0x00000000000005a0       0xb8 config.o
-                0x00000000000005a0                phantom_config_save
- *fill*         0x0000000000000658        0x8 
+                0x0000000000000580       0xb8 config.o
+                0x0000000000000580                phantom_config_save
+ *fill*         0x0000000000000638        0x8 
  .text.__libnx_initheap
-                0x0000000000000660       0x2c main.o
-                0x0000000000000660                __libnx_initheap
- *fill*         0x000000000000068c        0x4 
+                0x0000000000000640       0x2c main.o
+                0x0000000000000640                __libnx_initheap
+ *fill*         0x000000000000066c        0x4 
  .text.__appInit
-                0x0000000000000690       0x8c main.o
-                0x0000000000000690                __appInit
- *fill*         0x000000000000071c        0x4 
+                0x0000000000000670       0x8c main.o
+                0x0000000000000670                __appInit
+ *fill*         0x00000000000006fc        0x4 
  .text.__appExit
-                0x0000000000000720       0x1c main.o
-                0x0000000000000720                __appExit
- *fill*         0x000000000000073c        0x4 
+                0x0000000000000700       0x1c main.o
+                0x0000000000000700                __appExit
+ *fill*         0x000000000000071c        0x4 
  .text.phantom_suppress_apply
-                0x0000000000000740       0x5c suppress.o
-                0x0000000000000740                phantom_suppress_apply
- *fill*         0x000000000000079c        0x4 
+                0x0000000000000720       0x5c suppress.o
+                0x0000000000000720                phantom_suppress_apply
+ *fill*         0x000000000000077c        0x4 
  .text._fsCleanup
-                0x00000000000007a0       0xb4 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
- *fill*         0x0000000000000854        0xc 
+                0x0000000000000780       0xb4 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+ *fill*         0x0000000000000834        0xc 
  .text._fsCmdNoIO
-                0x0000000000000860      0x1c0 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000000840      0x1c0 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
  .text._fsFsCmdWithInPath
-                0x0000000000000a20      0x1e0 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000000a00      0x1e0 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
  .text._fsFsCmdWithTwoInPaths
-                0x0000000000000c00      0x1f8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
- *fill*         0x0000000000000df8        0x8 
+                0x0000000000000be0      0x1f8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+ *fill*         0x0000000000000dd8        0x8 
  .text._fsFsOpenCommon
-                0x0000000000000e00      0x28c /opt/devkitpro/libnx/lib/libnx.a(fs.o)
- *fill*         0x000000000000108c        0x4 
+                0x0000000000000de0      0x28c /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+ *fill*         0x000000000000106c        0x4 
  .text._fsFsCmdWithInPathAndOutU64
-                0x0000000000001090      0x1fc /opt/devkitpro/libnx/lib/libnx.a(fs.o)
- *fill*         0x000000000000128c        0x4 
+                0x0000000000001070      0x1fc /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+ *fill*         0x000000000000126c        0x4 
  .text._fsObjectClose
-                0x0000000000001290       0xf8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
- *fill*         0x0000000000001388        0x8 
+                0x0000000000001270       0xf8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+ *fill*         0x0000000000001368        0x8 
  .text._fsCmdGetSession.constprop.0
-                0x0000000000001390      0x17c /opt/devkitpro/libnx/lib/libnx.a(fs.o)
- *fill*         0x000000000000150c        0x4 
+                0x0000000000001370      0x17c /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+ *fill*         0x00000000000014ec        0x4 
  .text.fsInitialize
-                0x0000000000001510      0x2f8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000001510                fsInitialize
- *fill*         0x0000000000001808        0x8 
- .text.fsExit   0x0000000000001810       0x48 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000001810                fsExit
- *fill*         0x0000000000001858        0x8 
+                0x00000000000014f0      0x2f8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x00000000000014f0                fsInitialize
+ *fill*         0x00000000000017e8        0x8 
+ .text.fsExit   0x00000000000017f0       0x48 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x00000000000017f0                fsExit
+ *fill*         0x0000000000001838        0x8 
  .text.fsOpenSdCardFileSystem
-                0x0000000000001860        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000001860                fsOpenSdCardFileSystem
- *fill*         0x0000000000001868        0x8 
+                0x0000000000001840        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000001840                fsOpenSdCardFileSystem
+ *fill*         0x0000000000001848        0x8 
  .text.fsFsCreateFile
-                0x0000000000001870      0x1ec /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000001870                fsFsCreateFile
- *fill*         0x0000000000001a5c        0x4 
+                0x0000000000001850      0x1ec /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000001850                fsFsCreateFile
+ *fill*         0x0000000000001a3c        0x4 
  .text.fsFsDeleteFile
-                0x0000000000001a60        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000001a60                fsFsDeleteFile
- *fill*         0x0000000000001a68        0x8 
+                0x0000000000001a40        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000001a40                fsFsDeleteFile
+ *fill*         0x0000000000001a48        0x8 
  .text.fsFsCreateDirectory
-                0x0000000000001a70        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000001a70                fsFsCreateDirectory
- *fill*         0x0000000000001a78        0x8 
+                0x0000000000001a50        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000001a50                fsFsCreateDirectory
+ *fill*         0x0000000000001a58        0x8 
  .text.fsFsDeleteDirectory
-                0x0000000000001a80        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000001a80                fsFsDeleteDirectory
- *fill*         0x0000000000001a88        0x8 
+                0x0000000000001a60        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000001a60                fsFsDeleteDirectory
+ *fill*         0x0000000000001a68        0x8 
  .text.fsFsRenameFile
-                0x0000000000001a90        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000001a90                fsFsRenameFile
- *fill*         0x0000000000001a98        0x8 
+                0x0000000000001a70        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000001a70                fsFsRenameFile
+ *fill*         0x0000000000001a78        0x8 
  .text.fsFsRenameDirectory
-                0x0000000000001aa0        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000001aa0                fsFsRenameDirectory
- *fill*         0x0000000000001aa8        0x8 
+                0x0000000000001a80        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000001a80                fsFsRenameDirectory
+ *fill*         0x0000000000001a88        0x8 
  .text.fsFsGetEntryType
-                0x0000000000001ab0      0x1f0 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000001ab0                fsFsGetEntryType
+                0x0000000000001a90      0x1f0 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000001a90                fsFsGetEntryType
  .text.fsFsOpenFile
-                0x0000000000001ca0        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000001ca0                fsFsOpenFile
- *fill*         0x0000000000001ca8        0x8 
+                0x0000000000001c80        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000001c80                fsFsOpenFile
+ *fill*         0x0000000000001c88        0x8 
  .text.fsFsOpenDirectory
-                0x0000000000001cb0        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000001cb0                fsFsOpenDirectory
- *fill*         0x0000000000001cb8        0x8 
+                0x0000000000001c90        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000001c90                fsFsOpenDirectory
+ *fill*         0x0000000000001c98        0x8 
  .text.fsFsGetFreeSpace
-                0x0000000000001cc0        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000001cc0                fsFsGetFreeSpace
- *fill*         0x0000000000001cc8        0x8 
+                0x0000000000001ca0        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000001ca0                fsFsGetFreeSpace
+ *fill*         0x0000000000001ca8        0x8 
  .text.fsFsGetTotalSpace
-                0x0000000000001cd0        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000001cd0                fsFsGetTotalSpace
- *fill*         0x0000000000001cd8        0x8 
+                0x0000000000001cb0        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000001cb0                fsFsGetTotalSpace
+ *fill*         0x0000000000001cb8        0x8 
  .text.fsFsGetFileTimeStampRaw
-                0x0000000000001ce0      0x230 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000001ce0                fsFsGetFileTimeStampRaw
+                0x0000000000001cc0      0x230 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000001cc0                fsFsGetFileTimeStampRaw
  .text.fsFsClose
-                0x0000000000001f10        0x4 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000001f10                fsFsClose
- *fill*         0x0000000000001f14        0xc 
+                0x0000000000001ef0        0x4 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000001ef0                fsFsClose
+ *fill*         0x0000000000001ef4        0xc 
  .text.fsFileRead
-                0x0000000000001f20      0x214 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000001f20                fsFileRead
- *fill*         0x0000000000002134        0xc 
+                0x0000000000001f00      0x214 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000001f00                fsFileRead
+ *fill*         0x0000000000002114        0xc 
  .text.fsFileWrite
-                0x0000000000002140      0x1f8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000002140                fsFileWrite
- *fill*         0x0000000000002338        0x8 
+                0x0000000000002120      0x1f8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000002120                fsFileWrite
+ *fill*         0x0000000000002318        0x8 
  .text.fsFileFlush
-                0x0000000000002340        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000002340                fsFileFlush
- *fill*         0x0000000000002348        0x8 
+                0x0000000000002320        0x8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000002320                fsFileFlush
+ *fill*         0x0000000000002328        0x8 
  .text.fsFileSetSize
-                0x0000000000002350      0x1c0 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000002350                fsFileSetSize
+                0x0000000000002330      0x1c0 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000002330                fsFileSetSize
  .text.fsFileGetSize
-                0x0000000000002510      0x1d4 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000002510                fsFileGetSize
- *fill*         0x00000000000026e4        0xc 
+                0x00000000000024f0      0x1d4 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x00000000000024f0                fsFileGetSize
+ *fill*         0x00000000000026c4        0xc 
  .text.fsFileClose
-                0x00000000000026f0        0x4 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x00000000000026f0                fsFileClose
- *fill*         0x00000000000026f4        0xc 
+                0x00000000000026d0        0x4 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x00000000000026d0                fsFileClose
+ *fill*         0x00000000000026d4        0xc 
  .text.fsDirClose
-                0x0000000000002700        0x4 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000002700                fsDirClose
- *fill*         0x0000000000002704        0xc 
+                0x00000000000026e0        0x4 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x00000000000026e0                fsDirClose
+ *fill*         0x00000000000026e4        0xc 
  .text.fsDirRead
-                0x0000000000002710      0x204 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
-                0x0000000000002710                fsDirRead
- *fill*         0x0000000000002914        0xc 
+                0x00000000000026f0      0x204 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x00000000000026f0                fsDirRead
+ *fill*         0x00000000000028f4        0xc 
  .text._hidCleanup
-                0x0000000000002920      0x12c /opt/devkitpro/libnx/lib/libnx.a(hid.o)
- *fill*         0x0000000000002a4c        0x4 
+                0x0000000000002900      0x12c /opt/devkitpro/libnx/lib/libnx.a(hid.o)
+ *fill*         0x0000000000002a2c        0x4 
  .text._hidCmdInAruidNoOut
-                0x0000000000002a50       0xd4 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
- *fill*         0x0000000000002b24        0xc 
+                0x0000000000002a30       0xd4 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
+ *fill*         0x0000000000002b04        0xc 
  .text._hidCmdInU32AruidNoOut
-                0x0000000000002b30       0xe0 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
+                0x0000000000002b10       0xe0 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
  .text._hidGetStates
-                0x0000000000002c10      0x194 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
- *fill*         0x0000000000002da4        0xc 
+                0x0000000000002bf0      0x194 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
+ *fill*         0x0000000000002d84        0xc 
  .text.hidInitialize
-                0x0000000000002db0      0x26c /opt/devkitpro/libnx/lib/libnx.a(hid.o)
-                0x0000000000002db0                hidInitialize
- *fill*         0x000000000000301c        0x4 
- .text.hidExit  0x0000000000003020       0x48 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
-                0x0000000000003020                hidExit
- *fill*         0x0000000000003068        0x8 
+                0x0000000000002d90      0x26c /opt/devkitpro/libnx/lib/libnx.a(hid.o)
+                0x0000000000002d90                hidInitialize
+ *fill*         0x0000000000002ffc        0x4 
+ .text.hidExit  0x0000000000003000       0x48 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
+                0x0000000000003000                hidExit
+ *fill*         0x0000000000003048        0x8 
  .text.hidGetSharedmemAddr
-                0x0000000000003070        0xc /opt/devkitpro/libnx/lib/libnx.a(hid.o)
-                0x0000000000003070                hidGetSharedmemAddr
- *fill*         0x000000000000307c        0x4 
+                0x0000000000003050        0xc /opt/devkitpro/libnx/lib/libnx.a(hid.o)
+                0x0000000000003050                hidGetSharedmemAddr
+ *fill*         0x000000000000305c        0x4 
  .text.hidGetNpadStyleSet
-                0x0000000000003080       0x90 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
-                0x0000000000003080                hidGetNpadStyleSet
+                0x0000000000003060       0x90 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
+                0x0000000000003060                hidGetNpadStyleSet
  .text.hidInitializeNpad
-                0x0000000000003110       0x84 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
-                0x0000000000003110                hidInitializeNpad
- *fill*         0x0000000000003194        0xc 
+                0x00000000000030f0       0x84 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
+                0x00000000000030f0                hidInitializeNpad
+ *fill*         0x0000000000003174        0xc 
  .text.hidGetNpadStatesHandheld
-                0x00000000000031a0       0xa4 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
-                0x00000000000031a0                hidGetNpadStatesHandheld
- *fill*         0x0000000000003244        0xc 
+                0x0000000000003180       0xa4 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
+                0x0000000000003180                hidGetNpadStatesHandheld
+ *fill*         0x0000000000003224        0xc 
  .text.hidSetSupportedNpadIdType
-                0x0000000000003250      0x100 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
-                0x0000000000003250                hidSetSupportedNpadIdType
+                0x0000000000003230      0x100 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
+                0x0000000000003230                hidSetSupportedNpadIdType
  .text._hiddbgCmdNoIO
-                0x0000000000003350       0xbc /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
- *fill*         0x000000000000340c        0x4 
+                0x0000000000003330       0xbc /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+ *fill*         0x00000000000033ec        0x4 
  .text._hiddbgCmdInU64NoOut
-                0x0000000000003410       0xc0 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+                0x00000000000033f0       0xc0 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
  .text._hiddbgCmdInU8NoOut
-                0x00000000000034d0       0xc0 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+                0x00000000000034b0       0xc0 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
  .text._hiddbgCleanup
-                0x0000000000003590       0x78 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
- *fill*         0x0000000000003608        0x8 
+                0x0000000000003570       0x78 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+ *fill*         0x00000000000035e8        0x8 
  .text._hiddbgCmdInHandle64OutU64.constprop.0
-                0x0000000000003610       0xe0 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+                0x00000000000035f0       0xe0 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
  .text._hiddbgCmdInHandle64NoOut.constprop.0
-                0x00000000000036f0       0xcc /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
- *fill*         0x00000000000037bc        0x4 
+                0x00000000000036d0       0xcc /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+ *fill*         0x000000000000379c        0x4 
  .text.hiddbgInitialize
-                0x00000000000037c0       0xa0 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
-                0x00000000000037c0                hiddbgInitialize
+                0x00000000000037a0       0xa0 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+                0x00000000000037a0                hiddbgInitialize
  .text.hiddbgExit
-                0x0000000000003860       0x48 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
-                0x0000000000003860                hiddbgExit
- *fill*         0x00000000000038a8        0x8 
+                0x0000000000003840       0x48 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+                0x0000000000003840                hiddbgExit
+ *fill*         0x0000000000003888        0x8 
  .text.hiddbgAttachHdlsWorkBuffer
-                0x00000000000038b0      0x104 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
-                0x00000000000038b0                hiddbgAttachHdlsWorkBuffer
- *fill*         0x00000000000039b4        0xc 
+                0x0000000000003890      0x104 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+                0x0000000000003890                hiddbgAttachHdlsWorkBuffer
+ *fill*         0x0000000000003994        0xc 
  .text.hiddbgDumpHdlsNpadAssignmentState
-                0x00000000000039c0       0x9c /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
-                0x00000000000039c0                hiddbgDumpHdlsNpadAssignmentState
- *fill*         0x0000000000003a5c        0x4 
+                0x00000000000039a0       0x9c /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+                0x00000000000039a0                hiddbgDumpHdlsNpadAssignmentState
+ *fill*         0x0000000000003a3c        0x4 
  .text.hiddbgApplyHdlsNpadAssignmentState
-                0x0000000000003a60      0x174 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
-                0x0000000000003a60                hiddbgApplyHdlsNpadAssignmentState
- *fill*         0x0000000000003bd4        0xc 
+                0x0000000000003a40      0x174 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+                0x0000000000003a40                hiddbgApplyHdlsNpadAssignmentState
+ *fill*         0x0000000000003bb4        0xc 
  .text.hiddbgAttachHdlsVirtualDevice
-                0x0000000000003be0      0x21c /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
-                0x0000000000003be0                hiddbgAttachHdlsVirtualDevice
- *fill*         0x0000000000003dfc        0x4 
+                0x0000000000003bc0      0x21c /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+                0x0000000000003bc0                hiddbgAttachHdlsVirtualDevice
+ *fill*         0x0000000000003ddc        0x4 
  .text.hiddbgDetachHdlsVirtualDevice
-                0x0000000000003e00       0x60 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
-                0x0000000000003e00                hiddbgDetachHdlsVirtualDevice
+                0x0000000000003de0       0x60 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+                0x0000000000003de0                hiddbgDetachHdlsVirtualDevice
  .text.hiddbgSetHdlsState
-                0x0000000000003e60      0x230 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
-                0x0000000000003e60                hiddbgSetHdlsState
+                0x0000000000003e40      0x230 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+                0x0000000000003e40                hiddbgSetHdlsState
  .text._setsysGetFirmwareVersionImpl
-                0x0000000000004090       0xd0 /opt/devkitpro/libnx/lib/libnx.a(set.o)
+                0x0000000000004070       0xd0 /opt/devkitpro/libnx/lib/libnx.a(set.o)
  .text._setsysCleanup
-                0x0000000000004160       0x78 /opt/devkitpro/libnx/lib/libnx.a(set.o)
- *fill*         0x00000000000041d8        0x8 
+                0x0000000000004140       0x78 /opt/devkitpro/libnx/lib/libnx.a(set.o)
+ *fill*         0x00000000000041b8        0x8 
  .text.setsysInitialize
-                0x00000000000041e0       0xa0 /opt/devkitpro/libnx/lib/libnx.a(set.o)
-                0x00000000000041e0                setsysInitialize
+                0x00000000000041c0       0xa0 /opt/devkitpro/libnx/lib/libnx.a(set.o)
+                0x00000000000041c0                setsysInitialize
  .text.setsysExit
-                0x0000000000004280       0x48 /opt/devkitpro/libnx/lib/libnx.a(set.o)
-                0x0000000000004280                setsysExit
- *fill*         0x00000000000042c8        0x8 
+                0x0000000000004260       0x48 /opt/devkitpro/libnx/lib/libnx.a(set.o)
+                0x0000000000004260                setsysExit
+ *fill*         0x00000000000042a8        0x8 
  .text.setsysGetFirmwareVersion
-                0x00000000000042d0       0x48 /opt/devkitpro/libnx/lib/libnx.a(set.o)
-                0x00000000000042d0                setsysGetFirmwareVersion
- *fill*         0x0000000000004318        0x8 
+                0x00000000000042b0       0x48 /opt/devkitpro/libnx/lib/libnx.a(set.o)
+                0x00000000000042b0                setsysGetFirmwareVersion
+ *fill*         0x00000000000042f8        0x8 
  .text._smCmifCmdInPid
-                0x0000000000004320       0xcc /opt/devkitpro/libnx/lib/libnx.a(sm.o)
- *fill*         0x00000000000043ec        0x4 
+                0x0000000000004300       0xcc /opt/devkitpro/libnx/lib/libnx.a(sm.o)
+ *fill*         0x00000000000043cc        0x4 
  .text._smCleanup
-                0x00000000000043f0       0x78 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
- *fill*         0x0000000000004468        0x8 
+                0x00000000000043d0       0x78 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
+ *fill*         0x0000000000004448        0x8 
  .text.smAddOverrideHandle
-                0x0000000000004470       0x48 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
-                0x0000000000004470                smAddOverrideHandle
- *fill*         0x00000000000044b8        0x8 
+                0x0000000000004450       0x48 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
+                0x0000000000004450                smAddOverrideHandle
+ *fill*         0x0000000000004498        0x8 
  .text.smGetServiceOverride
-                0x00000000000044c0       0x54 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
-                0x00000000000044c0                smGetServiceOverride
- *fill*         0x0000000000004514        0xc 
+                0x00000000000044a0       0x54 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
+                0x00000000000044a0                smGetServiceOverride
+ *fill*         0x00000000000044f4        0xc 
  .text.smInitialize
-                0x0000000000004520      0x1ac /opt/devkitpro/libnx/lib/libnx.a(sm.o)
-                0x0000000000004520                smInitialize
- *fill*         0x00000000000046cc        0x4 
- .text.smExit   0x00000000000046d0       0x48 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
-                0x00000000000046d0                smExit
- *fill*         0x0000000000004718        0x8 
+                0x0000000000004500      0x1ac /opt/devkitpro/libnx/lib/libnx.a(sm.o)
+                0x0000000000004500                smInitialize
+ *fill*         0x00000000000046ac        0x4 
+ .text.smExit   0x00000000000046b0       0x48 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
+                0x00000000000046b0                smExit
+ *fill*         0x00000000000046f8        0x8 
  .text.smGetServiceOriginal
-                0x0000000000004720       0xd0 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
-                0x0000000000004720                smGetServiceOriginal
+                0x0000000000004700       0xd0 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
+                0x0000000000004700                smGetServiceOriginal
  .text.smGetServiceWrapper
-                0x00000000000047f0      0x120 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
-                0x00000000000047f0                smGetServiceWrapper
+                0x00000000000047d0      0x120 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
+                0x00000000000047d0                smGetServiceWrapper
  .text.__libnx_alloc
-                0x0000000000004910        0x4 /opt/devkitpro/libnx/lib/libnx.a(alloc.o)
-                0x0000000000004910                __libnx_alloc
- *fill*         0x0000000000004914        0xc 
+                0x00000000000048f0        0x4 /opt/devkitpro/libnx/lib/libnx.a(alloc.o)
+                0x00000000000048f0                __libnx_alloc
+ *fill*         0x00000000000048f4        0xc 
  .text.__libnx_free
-                0x0000000000004920        0x4 /opt/devkitpro/libnx/lib/libnx.a(alloc.o)
-                0x0000000000004920                __libnx_free
- *fill*         0x0000000000004924        0xc 
+                0x0000000000004900        0x4 /opt/devkitpro/libnx/lib/libnx.a(alloc.o)
+                0x0000000000004900                __libnx_free
+ *fill*         0x0000000000004904        0xc 
  .text.diagAbortWithResult
-                0x0000000000004930       0x1c /opt/devkitpro/libnx/lib/libnx.a(diag.o)
-                0x0000000000004930                diagAbortWithResult
- *fill*         0x000000000000494c        0x4 
+                0x0000000000004910       0x1c /opt/devkitpro/libnx/lib/libnx.a(diag.o)
+                0x0000000000004910                diagAbortWithResult
+ *fill*         0x000000000000492c        0x4 
  .text.hosversionGet
-                0x0000000000004950       0x14 /opt/devkitpro/libnx/lib/libnx.a(hosversion.o)
-                0x0000000000004950                hosversionGet
- *fill*         0x0000000000004964        0xc 
+                0x0000000000004930       0x14 /opt/devkitpro/libnx/lib/libnx.a(hosversion.o)
+                0x0000000000004930                hosversionGet
+ *fill*         0x0000000000004944        0xc 
  .text.hosversionSet
-                0x0000000000004970       0x10 /opt/devkitpro/libnx/lib/libnx.a(hosversion.o)
-                0x0000000000004970                hosversionSet
+                0x0000000000004950       0x10 /opt/devkitpro/libnx/lib/libnx.a(hosversion.o)
+                0x0000000000004950                hosversionSet
  .text.fsdev_link
-                0x0000000000004980       0x10 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+                0x0000000000004960       0x10 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
  .text.fsdev_dirreset
-                0x0000000000004990       0x10 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+                0x0000000000004970       0x10 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
  .text.fsdev_chmod
-                0x00000000000049a0       0x10 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+                0x0000000000004980       0x10 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
  .text.error_cmp
-                0x00000000000049b0       0x18 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x00000000000049c8        0x8 
+                0x0000000000004990       0x18 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x00000000000049a8        0x8 
  .text.fsdev_dirclose
-                0x00000000000049d0       0x20 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+                0x00000000000049b0       0x20 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
  .text.fsdev_close
-                0x00000000000049f0       0x1c /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x0000000000004a0c        0x4 
+                0x00000000000049d0       0x1c /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x00000000000049ec        0x4 
  .text.fsdev_converttimetoutc
-                0x0000000000004a10       0x74 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x0000000000004a84        0xc 
+                0x00000000000049f0       0x74 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x0000000000004a64        0xc 
  .text.fsdevFindDevice.part.0
-                0x0000000000004a90       0xf8 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x0000000000004b88        0x8 
+                0x0000000000004a70       0xf8 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x0000000000004b68        0x8 
  .text.fsdev_fixpath
-                0x0000000000004b90      0x1cc /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x0000000000004d5c        0x4 
+                0x0000000000004b70      0x1cc /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x0000000000004d3c        0x4 
  .text._fsdevUnmountDeviceStruct.part.0
-                0x0000000000004d60       0x9c /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x0000000000004dfc        0x4 
+                0x0000000000004d40       0x9c /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x0000000000004ddc        0x4 
  .text.fsdev_fchmod
-                0x0000000000004e00       0x10 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+                0x0000000000004de0       0x10 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
  .text.fsdev_diropen
-                0x0000000000004e10      0x100 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+                0x0000000000004df0      0x100 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
  .text.fsdev_statvfs
-                0x0000000000004f10       0xf8 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x0000000000005008        0x8 
+                0x0000000000004ef0       0xf8 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x0000000000004fe8        0x8 
  .text.fsdev_fsync
-                0x0000000000005010       0x7c /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x000000000000508c        0x4 
+                0x0000000000004ff0       0x7c /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x000000000000506c        0x4 
  .text.fsdev_fstat
-                0x0000000000005090       0xec /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x000000000000517c        0x4 
+                0x0000000000005070       0xec /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x000000000000515c        0x4 
  .text.fsdev_ftruncate
-                0x0000000000005180       0x94 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x0000000000005214        0xc 
+                0x0000000000005160       0x94 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x00000000000051f4        0xc 
  .text.fsdev_stat
-                0x0000000000005220      0x1d8 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x00000000000053f8        0x8 
+                0x0000000000005200      0x1d8 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x00000000000053d8        0x8 
  .text.fsdev_rename
-                0x0000000000005400      0x14c /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x000000000000554c        0x4 
+                0x00000000000053e0      0x14c /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x000000000000552c        0x4 
  .text.fsdev_chdir
-                0x0000000000005550      0x13c /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x000000000000568c        0x4 
+                0x0000000000005530      0x13c /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x000000000000566c        0x4 
  .text.fsdev_rmdir
-                0x0000000000005690       0xa4 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x0000000000005734        0xc 
+                0x0000000000005670       0xa4 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x0000000000005714        0xc 
  .text.fsdev_mkdir
-                0x0000000000005740       0xa4 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x00000000000057e4        0xc 
+                0x0000000000005720       0xa4 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x00000000000057c4        0xc 
  .text.fsdev_unlink
-                0x00000000000057f0       0xa4 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x0000000000005894        0xc 
+                0x00000000000057d0       0xa4 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x0000000000005874        0xc 
  .text.fsdev_write_safe
-                0x00000000000058a0      0x13c /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x00000000000059dc        0x4 
+                0x0000000000005880      0x13c /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x00000000000059bc        0x4 
  .text.fsdev_read_safe
-                0x00000000000059e0      0x134 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x0000000000005b14        0xc 
+                0x00000000000059c0      0x134 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x0000000000005af4        0xc 
  .text.fsdev_read
-                0x0000000000005b20      0x100 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+                0x0000000000005b00      0x100 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
  .text.fsdev_dirnext
-                0x0000000000005c20      0x1d4 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x0000000000005df4        0xc 
+                0x0000000000005c00      0x1d4 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x0000000000005dd4        0xc 
  .text.fsdev_write
-                0x0000000000005e00      0x124 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- *fill*         0x0000000000005f24        0xc 
+                0x0000000000005de0      0x124 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ *fill*         0x0000000000005f04        0xc 
  .text.fsdev_seek
-                0x0000000000005f30      0x110 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+                0x0000000000005f10      0x110 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
  .text.fsdev_open
-                0x0000000000006040      0x230 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+                0x0000000000006020      0x230 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
  .text.fsdevMountDevice
-                0x0000000000006270      0x324 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
-                0x0000000000006270                fsdevMountDevice
- *fill*         0x0000000000006594        0xc 
+                0x0000000000006250      0x324 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+                0x0000000000006250                fsdevMountDevice
+ *fill*         0x0000000000006574        0xc 
  .text.fsdevMountSdmc
-                0x00000000000065a0       0x40 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
-                0x00000000000065a0                fsdevMountSdmc
+                0x0000000000006580       0x40 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+                0x0000000000006580                fsdevMountSdmc
  .text.fsdevUnmountAll
-                0x00000000000065e0       0x64 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
-                0x00000000000065e0                fsdevUnmountAll
- *fill*         0x0000000000006644        0xc 
+                0x00000000000065c0       0x64 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+                0x00000000000065c0                fsdevUnmountAll
+ *fill*         0x0000000000006624        0xc 
  .text.decode_utf8
-                0x0000000000006650      0x128 /opt/devkitpro/libnx/lib/libnx.a(decode_utf8.o)
-                0x0000000000006650                decode_utf8
+                0x0000000000006630      0x128 /opt/devkitpro/libnx/lib/libnx.a(decode_utf8.o)
+                0x0000000000006630                decode_utf8
  .text.svcSetMemoryPermission
-                0x0000000000006778        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x0000000000006778                svcSetMemoryPermission
+                0x0000000000006758        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x0000000000006758                svcSetMemoryPermission
  .text.svcSetMemoryAttribute
-                0x0000000000006780        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x0000000000006780                svcSetMemoryAttribute
+                0x0000000000006760        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x0000000000006760                svcSetMemoryAttribute
  .text.svcUnmapMemory
-                0x0000000000006788        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x0000000000006788                svcUnmapMemory
+                0x0000000000006768        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x0000000000006768                svcUnmapMemory
  .text.svcQueryMemory
-                0x0000000000006790       0x14 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x0000000000006790                svcQueryMemory
+                0x0000000000006770       0x14 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x0000000000006770                svcQueryMemory
  .text.svcExitProcess
-                0x00000000000067a4        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x00000000000067a4                svcExitProcess
+                0x0000000000006784        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x0000000000006784                svcExitProcess
  .text.svcSleepThread
-                0x00000000000067ac        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x00000000000067ac                svcSleepThread
+                0x000000000000678c        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x000000000000678c                svcSleepThread
  .text.svcMapSharedMemory
-                0x00000000000067b4        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x00000000000067b4                svcMapSharedMemory
+                0x0000000000006794        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x0000000000006794                svcMapSharedMemory
  .text.svcUnmapSharedMemory
-                0x00000000000067bc        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x00000000000067bc                svcUnmapSharedMemory
+                0x000000000000679c        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x000000000000679c                svcUnmapSharedMemory
  .text.svcCreateTransferMemory
-                0x00000000000067c4       0x14 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x00000000000067c4                svcCreateTransferMemory
+                0x00000000000067a4       0x14 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x00000000000067a4                svcCreateTransferMemory
  .text.svcCloseHandle
-                0x00000000000067d8        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x00000000000067d8                svcCloseHandle
+                0x00000000000067b8        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x00000000000067b8                svcCloseHandle
  .text.svcArbitrateLock
-                0x00000000000067e0        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x00000000000067e0                svcArbitrateLock
+                0x00000000000067c0        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x00000000000067c0                svcArbitrateLock
  .text.svcArbitrateUnlock
-                0x00000000000067e8        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x00000000000067e8                svcArbitrateUnlock
+                0x00000000000067c8        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x00000000000067c8                svcArbitrateUnlock
  .text.svcWaitProcessWideKeyAtomic
-                0x00000000000067f0        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x00000000000067f0                svcWaitProcessWideKeyAtomic
+                0x00000000000067d0        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x00000000000067d0                svcWaitProcessWideKeyAtomic
  .text.svcSignalProcessWideKey
-                0x00000000000067f8        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x00000000000067f8                svcSignalProcessWideKey
+                0x00000000000067d8        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x00000000000067d8                svcSignalProcessWideKey
  .text.svcConnectToNamedPort
-                0x0000000000006800       0x14 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x0000000000006800                svcConnectToNamedPort
+                0x00000000000067e0       0x14 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x00000000000067e0                svcConnectToNamedPort
  .text.svcSendSyncRequest
-                0x0000000000006814        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x0000000000006814                svcSendSyncRequest
+                0x00000000000067f4        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x00000000000067f4                svcSendSyncRequest
  .text.svcBreak
-                0x000000000000681c        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x000000000000681c                svcBreak
+                0x00000000000067fc        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x00000000000067fc                svcBreak
  .text.svcReturnFromException
-                0x0000000000006824        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x0000000000006824                svcReturnFromException
+                0x0000000000006804        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x0000000000006804                svcReturnFromException
  .text.svcGetInfo
-                0x000000000000682c       0x14 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x000000000000682c                svcGetInfo
+                0x000000000000680c       0x14 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x000000000000680c                svcGetInfo
  .text.svcUnmapTransferMemory
-                0x0000000000006840        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
-                0x0000000000006840                svcUnmapTransferMemory
+                0x0000000000006820        0x8 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x0000000000006820                svcUnmapTransferMemory
  .text.__aarch64_read_tp
-                0x0000000000006848        0xc /opt/devkitpro/libnx/lib/libnx.a(readtp.o)
-                0x0000000000006848                __aarch64_read_tp
- *fill*         0x0000000000006854        0xc 
+                0x0000000000006828        0xc /opt/devkitpro/libnx/lib/libnx.a(readtp.o)
+                0x0000000000006828                __aarch64_read_tp
+ *fill*         0x0000000000006834        0xc 
  .text.mutexLock
-                0x0000000000006860       0xc8 /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
-                0x0000000000006860                mutexLock
- *fill*         0x0000000000006928        0x8 
+                0x0000000000006840       0xc8 /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
+                0x0000000000006840                mutexLock
+ *fill*         0x0000000000006908        0x8 
  .text.mutexUnlock
-                0x0000000000006930       0x68 /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
-                0x0000000000006930                mutexUnlock
- *fill*         0x0000000000006998        0x8 
+                0x0000000000006910       0x68 /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
+                0x0000000000006910                mutexUnlock
+ *fill*         0x0000000000006978        0x8 
  .text.mutexIsLockedByCurrentThread
-                0x00000000000069a0       0x1c /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
-                0x00000000000069a0                mutexIsLockedByCurrentThread
- *fill*         0x00000000000069bc        0x4 
+                0x0000000000006980       0x1c /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
+                0x0000000000006980                mutexIsLockedByCurrentThread
+ *fill*         0x000000000000699c        0x4 
  .text.rmutexLock
-                0x00000000000069c0       0x50 /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
-                0x00000000000069c0                rmutexLock
+                0x00000000000069a0       0x50 /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
+                0x00000000000069a0                rmutexLock
  .text.rmutexUnlock
-                0x0000000000006a10       0x18 /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
-                0x0000000000006a10                rmutexUnlock
- *fill*         0x0000000000006a28        0x8 
+                0x00000000000069f0       0x18 /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
+                0x00000000000069f0                rmutexUnlock
+ *fill*         0x0000000000006a08        0x8 
  .text.shmemLoadRemote
-                0x0000000000006a30       0x14 /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
-                0x0000000000006a30                shmemLoadRemote
- *fill*         0x0000000000006a44        0xc 
+                0x0000000000006a10       0x14 /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
+                0x0000000000006a10                shmemLoadRemote
+ *fill*         0x0000000000006a24        0xc 
  .text.shmemMap
-                0x0000000000006a50       0x70 /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
-                0x0000000000006a50                shmemMap
+                0x0000000000006a30       0x70 /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
+                0x0000000000006a30                shmemMap
  .text.shmemUnmap
-                0x0000000000006ac0       0x34 /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
-                0x0000000000006ac0                shmemUnmap
- *fill*         0x0000000000006af4        0xc 
+                0x0000000000006aa0       0x34 /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
+                0x0000000000006aa0                shmemUnmap
+ *fill*         0x0000000000006ad4        0xc 
  .text.shmemClose
-                0x0000000000006b00       0x4c /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
-                0x0000000000006b00                shmemClose
- *fill*         0x0000000000006b4c        0x4 
+                0x0000000000006ae0       0x4c /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
+                0x0000000000006ae0                shmemClose
+ *fill*         0x0000000000006b2c        0x4 
  .text.tmemCreateFromMemory
-                0x0000000000006b50       0x2c /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
-                0x0000000000006b50                tmemCreateFromMemory
- *fill*         0x0000000000006b7c        0x4 
+                0x0000000000006b30       0x2c /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
+                0x0000000000006b30                tmemCreateFromMemory
+ *fill*         0x0000000000006b5c        0x4 
  .text.tmemUnmap
-                0x0000000000006b80       0x34 /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
-                0x0000000000006b80                tmemUnmap
- *fill*         0x0000000000006bb4        0xc 
+                0x0000000000006b60       0x34 /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
+                0x0000000000006b60                tmemUnmap
+ *fill*         0x0000000000006b94        0xc 
  .text.tmemCloseHandle
-                0x0000000000006bc0       0x30 /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
-                0x0000000000006bc0                tmemCloseHandle
+                0x0000000000006ba0       0x30 /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
+                0x0000000000006ba0                tmemCloseHandle
  .text.tmemClose
-                0x0000000000006bf0       0x50 /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
-                0x0000000000006bf0                tmemClose
+                0x0000000000006bd0       0x50 /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
+                0x0000000000006bd0                tmemClose
  .text._memregionInitWithInfo
-                0x0000000000006c40       0x64 /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
- *fill*         0x0000000000006ca4        0xc 
+                0x0000000000006c20       0x64 /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
+ *fill*         0x0000000000006c84        0xc 
  .text.__libnx_virtmem_rng
-                0x0000000000006cb0        0x4 /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
-                0x0000000000006cb0                __libnx_virtmem_rng
- *fill*         0x0000000000006cb4        0xc 
+                0x0000000000006c90        0x4 /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
+                0x0000000000006c90                __libnx_virtmem_rng
+ *fill*         0x0000000000006c94        0xc 
  .text._memregionFindRandom
-                0x0000000000006cc0      0x164 /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
- *fill*         0x0000000000006e24        0xc 
+                0x0000000000006ca0      0x164 /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
+ *fill*         0x0000000000006e04        0xc 
  .text.virtmemSetup
-                0x0000000000006e30      0x140 /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
-                0x0000000000006e30                virtmemSetup
+                0x0000000000006e10      0x140 /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
+                0x0000000000006e10                virtmemSetup
  .text.virtmemLock
-                0x0000000000006f70        0xc /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
-                0x0000000000006f70                virtmemLock
- *fill*         0x0000000000006f7c        0x4 
+                0x0000000000006f50        0xc /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
+                0x0000000000006f50                virtmemLock
+ *fill*         0x0000000000006f5c        0x4 
  .text.virtmemUnlock
-                0x0000000000006f80        0xc /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
-                0x0000000000006f80                virtmemUnlock
- *fill*         0x0000000000006f8c        0x4 
+                0x0000000000006f60        0xc /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
+                0x0000000000006f60                virtmemUnlock
+ *fill*         0x0000000000006f6c        0x4 
  .text.virtmemFindAslr
-                0x0000000000006f90       0x50 /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
-                0x0000000000006f90                virtmemFindAslr
+                0x0000000000006f70       0x50 /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
+                0x0000000000006f70                virtmemFindAslr
  .text.sessionmgrCreate
-                0x0000000000006fe0      0x184 /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
-                0x0000000000006fe0                sessionmgrCreate
- *fill*         0x0000000000007164        0xc 
+                0x0000000000006fc0      0x184 /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
+                0x0000000000006fc0                sessionmgrCreate
+ *fill*         0x0000000000007144        0xc 
  .text.sessionmgrClose
-                0x0000000000007170       0x84 /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
-                0x0000000000007170                sessionmgrClose
- *fill*         0x00000000000071f4        0xc 
+                0x0000000000007150       0x84 /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
+                0x0000000000007150                sessionmgrClose
+ *fill*         0x00000000000071d4        0xc 
  .text.sessionmgrAttachClient
-                0x0000000000007200       0xa8 /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
-                0x0000000000007200                sessionmgrAttachClient
- *fill*         0x00000000000072a8        0x8 
+                0x00000000000071e0       0xa8 /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
+                0x00000000000071e0                sessionmgrAttachClient
+ *fill*         0x0000000000007288        0x8 
  .text.sessionmgrDetachClient
-                0x00000000000072b0       0x60 /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
-                0x00000000000072b0                sessionmgrDetachClient
+                0x0000000000007290       0x60 /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
+                0x0000000000007290                sessionmgrDetachClient
  .text.appletGetAppletResourceUserId
-                0x0000000000007310        0xc /opt/devkitpro/libnx/lib/libnx.a(applet.o)
-                0x0000000000007310                appletGetAppletResourceUserId
- *fill*         0x000000000000731c        0x4 
+                0x00000000000072f0        0xc /opt/devkitpro/libnx/lib/libnx.a(applet.o)
+                0x00000000000072f0                appletGetAppletResourceUserId
+ *fill*         0x00000000000072fc        0x4 
  .text.timeToPosixTimeWithMyRule
-                0x0000000000007320      0x114 /opt/devkitpro/libnx/lib/libnx.a(time.o)
-                0x0000000000007320                timeToPosixTimeWithMyRule
- *fill*         0x0000000000007434        0xc 
+                0x0000000000007300      0x114 /opt/devkitpro/libnx/lib/libnx.a(time.o)
+                0x0000000000007300                timeToPosixTimeWithMyRule
+ *fill*         0x0000000000007414        0xc 
  .text.argvSetup
-                0x0000000000007440      0x314 /opt/devkitpro/libnx/lib/libnx.a(argv.o)
-                0x0000000000007440                argvSetup
- *fill*         0x0000000000007754        0xc 
+                0x0000000000007420      0x314 /opt/devkitpro/libnx/lib/libnx.a(argv.o)
+                0x0000000000007420                argvSetup
+ *fill*         0x0000000000007734        0xc 
  .text.__nx_dynamic
-                0x0000000000007760      0x1fc /opt/devkitpro/libnx/lib/libnx.a(dynamic.o)
-                0x0000000000007760                __nx_dynamic
- *fill*         0x000000000000795c        0x4 
+                0x0000000000007740      0x1fc /opt/devkitpro/libnx/lib/libnx.a(dynamic.o)
+                0x0000000000007740                __nx_dynamic
+ *fill*         0x000000000000793c        0x4 
  .text.envSetup
-                0x0000000000007960      0x208 /opt/devkitpro/libnx/lib/libnx.a(env.o)
-                0x0000000000007960                envSetup
- *fill*         0x0000000000007b68        0x8 
+                0x0000000000007940      0x208 /opt/devkitpro/libnx/lib/libnx.a(env.o)
+                0x0000000000007940                envSetup
+ *fill*         0x0000000000007b48        0x8 
  .text.envGetMainThreadHandle
-                0x0000000000007b70       0x20 /opt/devkitpro/libnx/lib/libnx.a(env.o)
-                0x0000000000007b70                envGetMainThreadHandle
+                0x0000000000007b50       0x20 /opt/devkitpro/libnx/lib/libnx.a(env.o)
+                0x0000000000007b50                envGetMainThreadHandle
  .text.envIsNso
-                0x0000000000007b90        0xc /opt/devkitpro/libnx/lib/libnx.a(env.o)
-                0x0000000000007b90                envIsNso
- *fill*         0x0000000000007b9c        0x4 
+                0x0000000000007b70        0xc /opt/devkitpro/libnx/lib/libnx.a(env.o)
+                0x0000000000007b70                envIsNso
+ *fill*         0x0000000000007b7c        0x4 
  .text.envHasArgv
-                0x0000000000007ba0       0x14 /opt/devkitpro/libnx/lib/libnx.a(env.o)
-                0x0000000000007ba0                envHasArgv
- *fill*         0x0000000000007bb4        0xc 
+                0x0000000000007b80       0x14 /opt/devkitpro/libnx/lib/libnx.a(env.o)
+                0x0000000000007b80                envHasArgv
+ *fill*         0x0000000000007b94        0xc 
  .text.envGetArgv
-                0x0000000000007bc0        0xc /opt/devkitpro/libnx/lib/libnx.a(env.o)
-                0x0000000000007bc0                envGetArgv
- *fill*         0x0000000000007bcc        0x4 
+                0x0000000000007ba0        0xc /opt/devkitpro/libnx/lib/libnx.a(env.o)
+                0x0000000000007ba0                envGetArgv
+ *fill*         0x0000000000007bac        0x4 
  .text.envGetExitFuncPtr
-                0x0000000000007bd0        0xc /opt/devkitpro/libnx/lib/libnx.a(env.o)
-                0x0000000000007bd0                envGetExitFuncPtr
- *fill*         0x0000000000007bdc        0x4 
+                0x0000000000007bb0        0xc /opt/devkitpro/libnx/lib/libnx.a(env.o)
+                0x0000000000007bb0                envGetExitFuncPtr
+ *fill*         0x0000000000007bbc        0x4 
  .text.envHasRandomSeed
-                0x0000000000007be0        0xc /opt/devkitpro/libnx/lib/libnx.a(env.o)
-                0x0000000000007be0                envHasRandomSeed
- *fill*         0x0000000000007bec        0x4 
+                0x0000000000007bc0        0xc /opt/devkitpro/libnx/lib/libnx.a(env.o)
+                0x0000000000007bc0                envHasRandomSeed
+ *fill*         0x0000000000007bcc        0x4 
  .text.envGetRandomSeed
-                0x0000000000007bf0       0x10 /opt/devkitpro/libnx/lib/libnx.a(env.o)
-                0x0000000000007bf0                envGetRandomSeed
+                0x0000000000007bd0       0x10 /opt/devkitpro/libnx/lib/libnx.a(env.o)
+                0x0000000000007bd0                envGetRandomSeed
  .text.__libnx_init
-                0x0000000000007c00       0x2c /opt/devkitpro/libnx/lib/libnx.a(init.o)
-                0x0000000000007c00                __libnx_init
- *fill*         0x0000000000007c2c        0x4 
+                0x0000000000007be0       0x2c /opt/devkitpro/libnx/lib/libnx.a(init.o)
+                0x0000000000007be0                __libnx_init
+ *fill*         0x0000000000007c0c        0x4 
  .text.__libnx_exit
-                0x0000000000007c30       0x1c /opt/devkitpro/libnx/lib/libnx.a(init.o)
-                0x0000000000007c30                __libnx_exit
- *fill*         0x0000000000007c4c        0x4 
+                0x0000000000007c10       0x1c /opt/devkitpro/libnx/lib/libnx.a(init.o)
+                0x0000000000007c10                __libnx_exit
+ *fill*         0x0000000000007c2c        0x4 
  .text.__syscall_exit
-                0x0000000000007c50       0x1c /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
-                0x0000000000007c50                __syscall_exit
- *fill*         0x0000000000007c6c        0x4 
+                0x0000000000007c30       0x1c /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
+                0x0000000000007c30                __syscall_exit
+ *fill*         0x0000000000007c4c        0x4 
  .text.__syscall_getreent
-                0x0000000000007c70       0x34 /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
-                0x0000000000007c70                __syscall_getreent
- *fill*         0x0000000000007ca4        0xc 
+                0x0000000000007c50       0x34 /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
+                0x0000000000007c50                __syscall_getreent
+ *fill*         0x0000000000007c84        0xc 
  .text.__syscall_lock_acquire
-                0x0000000000007cb0        0x4 /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
-                0x0000000000007cb0                __syscall_lock_acquire
- *fill*         0x0000000000007cb4        0xc 
+                0x0000000000007c90        0x4 /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
+                0x0000000000007c90                __syscall_lock_acquire
+ *fill*         0x0000000000007c94        0xc 
  .text.__syscall_lock_release
-                0x0000000000007cc0        0x4 /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
-                0x0000000000007cc0                __syscall_lock_release
- *fill*         0x0000000000007cc4        0xc 
+                0x0000000000007ca0        0x4 /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
+                0x0000000000007ca0                __syscall_lock_release
+ *fill*         0x0000000000007ca4        0xc 
  .text.__syscall_lock_acquire_recursive
-                0x0000000000007cd0        0x4 /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
-                0x0000000000007cd0                __syscall_lock_acquire_recursive
- *fill*         0x0000000000007cd4        0xc 
+                0x0000000000007cb0        0x4 /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
+                0x0000000000007cb0                __syscall_lock_acquire_recursive
+ *fill*         0x0000000000007cb4        0xc 
  .text.__syscall_lock_release_recursive
-                0x0000000000007ce0        0x4 /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
-                0x0000000000007ce0                __syscall_lock_release_recursive
- *fill*         0x0000000000007ce4        0xc 
+                0x0000000000007cc0        0x4 /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
+                0x0000000000007cc0                __syscall_lock_release_recursive
+ *fill*         0x0000000000007cc4        0xc 
  .text.newlibSetup
-                0x0000000000007cf0       0x98 /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
-                0x0000000000007cf0                newlibSetup
- *fill*         0x0000000000007d88        0x8 
+                0x0000000000007cd0       0x98 /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
+                0x0000000000007cd0                newlibSetup
+ *fill*         0x0000000000007d68        0x8 
  .text.nxlinkSetup
-                0x0000000000007d90       0xe8 /opt/devkitpro/libnx/lib/libnx.a(nxlink.o)
-                0x0000000000007d90                nxlinkSetup
+                0x0000000000007d70       0xe8 /opt/devkitpro/libnx/lib/libnx.a(nxlink.o)
+                0x0000000000007d70                nxlinkSetup
  .text.__libnx_exception_entry
-                0x0000000000007e78      0x1c0 /opt/devkitpro/libnx/lib/libnx.a(exception.o)
-                0x0000000000007e78                __libnx_exception_entry
+                0x0000000000007e58      0x1c0 /opt/devkitpro/libnx/lib/libnx.a(exception.o)
+                0x0000000000007e58                __libnx_exception_entry
  .text.__libnx_exception_returnentry
-                0x0000000000008038       0x18 /opt/devkitpro/libnx/lib/libnx.a(exception.o)
-                0x0000000000008038                __libnx_exception_returnentry
+                0x0000000000008018       0x18 /opt/devkitpro/libnx/lib/libnx.a(exception.o)
+                0x0000000000008018                __libnx_exception_returnentry
  .text.condvarWaitTimeout
-                0x0000000000008050       0x70 /opt/devkitpro/libnx/lib/libnx.a(condvar.o)
-                0x0000000000008050                condvarWaitTimeout
+                0x0000000000008030       0x70 /opt/devkitpro/libnx/lib/libnx.a(condvar.o)
+                0x0000000000008030                condvarWaitTimeout
  .text.randomGet
-                0x00000000000080c0      0x410 /opt/devkitpro/libnx/lib/libnx.a(random.o)
-                0x00000000000080c0                randomGet
+                0x00000000000080a0      0x410 /opt/devkitpro/libnx/lib/libnx.a(random.o)
+                0x00000000000080a0                randomGet
  .text.randomGet64
-                0x00000000000084d0       0x20 /opt/devkitpro/libnx/lib/libnx.a(random.o)
-                0x00000000000084d0                randomGet64
+                0x00000000000084b0       0x20 /opt/devkitpro/libnx/lib/libnx.a(random.o)
+                0x00000000000084b0                randomGet64
  .text.__libnx_init_thread
-                0x00000000000084f0       0xb0 /opt/devkitpro/libnx/lib/libnx.a(thread.o)
-                0x00000000000084f0                __libnx_init_thread
- .text.strncat  0x00000000000085a0       0xc4 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/../../../../aarch64-none-elf/lib/pic/libg.a(libc_a-strncat.o)
-                0x00000000000085a0                strncat
- *fill*         0x0000000000008664       0x1c 
+                0x00000000000084d0       0xb0 /opt/devkitpro/libnx/lib/libnx.a(thread.o)
+                0x00000000000084d0                __libnx_init_thread
+ .text.strncat  0x0000000000008580       0xc4 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/../../../../aarch64-none-elf/lib/pic/libg.a(libc_a-strncat.o)
+                0x0000000000008580                strncat
+ *fill*         0x0000000000008644       0x3c 
  .text          0x0000000000008680       0xcc /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/../../../../aarch64-none-elf/lib/pic/libg.a(libc_a-strchr.o)
                 0x0000000000008680                strchr
  *fill*         0x000000000000874c       0x34 
@@ -5420,131 +5419,131 @@ Linker script and memory map
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000    0xdd3ff
+.debug_info     0x0000000000000000    0xdd556
  *(.debug_info)
  .debug_info    0x0000000000000000      0xbf0 config.o
- .debug_info    0x0000000000000bf0     0x10a7 main.o
- .debug_info    0x0000000000001c97      0x368 suppress.o
- .debug_info    0x0000000000001fff    0x25435 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
- .debug_info    0x0000000000027434    0x1cfac /opt/devkitpro/libnx/lib/libnx.a(hid.o)
- .debug_info    0x00000000000443e0     0xccb9 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
- .debug_info    0x0000000000051099    0x341c1 /opt/devkitpro/libnx/lib/libnx.a(set.o)
- .debug_info    0x000000000008525a     0x485d /opt/devkitpro/libnx/lib/libnx.a(sm.o)
- .debug_info    0x0000000000089ab7      0x1e8 /opt/devkitpro/libnx/lib/libnx.a(alloc.o)
- .debug_info    0x0000000000089c9f      0x197 /opt/devkitpro/libnx/lib/libnx.a(diag.o)
- .debug_info    0x0000000000089e36      0x133 /opt/devkitpro/libnx/lib/libnx.a(hosversion.o)
- .debug_info    0x0000000000089f69     0x595a /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- .debug_info    0x000000000008f8c3       0x96 /opt/devkitpro/libnx/lib/libnx.a(path_buf.o)
- .debug_info    0x000000000008f959      0x177 /opt/devkitpro/libnx/lib/libnx.a(decode_utf8.o)
- .debug_info    0x000000000008fad0       0x23 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
- .debug_info    0x000000000008faf3       0x28 /opt/devkitpro/libnx/lib/libnx.a(readtp.o)
- .debug_info    0x000000000008fb1b       0x29 /opt/devkitpro/libnx/lib/libnx.a(switch_crt0.o)
- .debug_info    0x000000000008fb44      0x732 /opt/devkitpro/libnx/lib/libnx.a(event.o)
- .debug_info    0x0000000000090276      0xa6e /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
- .debug_info    0x0000000000090ce4      0x5cd /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
- .debug_info    0x00000000000912b1      0x95c /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
- .debug_info    0x0000000000091c0d     0x11e5 /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
- .debug_info    0x0000000000092df2     0x100a /opt/devkitpro/libnx/lib/libnx.a(wait.o)
- .debug_info    0x0000000000093dfc     0x12b1 /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
- .debug_info    0x00000000000950ad    0x35f50 /opt/devkitpro/libnx/lib/libnx.a(applet.o)
- .debug_info    0x00000000000caffd     0x7a37 /opt/devkitpro/libnx/lib/libnx.a(time.o)
- .debug_info    0x00000000000d2a34      0x4fa /opt/devkitpro/libnx/lib/libnx.a(argv.o)
- .debug_info    0x00000000000d2f2e      0x94b /opt/devkitpro/libnx/lib/libnx.a(dynamic.o)
- .debug_info    0x00000000000d3879      0x9b6 /opt/devkitpro/libnx/lib/libnx.a(env.o)
- .debug_info    0x00000000000d422f      0xd1d /opt/devkitpro/libnx/lib/libnx.a(init.o)
- .debug_info    0x00000000000d4f4c     0x263b /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
- .debug_info    0x00000000000d7587      0x1e1 /opt/devkitpro/libnx/lib/libnx.a(nxlink.o)
- .debug_info    0x00000000000d7768       0x23 /opt/devkitpro/libnx/lib/libnx.a(exception.o)
- .debug_info    0x00000000000d778b      0x395 /opt/devkitpro/libnx/lib/libnx.a(condvar.o)
- .debug_info    0x00000000000d7b20      0x9b3 /opt/devkitpro/libnx/lib/libnx.a(random.o)
- .debug_info    0x00000000000d84d3     0x1ca4 /opt/devkitpro/libnx/lib/libnx.a(thread.o)
- .debug_info    0x00000000000da177     0x2e17 /opt/devkitpro/libnx/lib/libnx.a(apm.o)
- .debug_info    0x00000000000dcf8e      0x38f /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(trunctfdf2.o)
- .debug_info    0x00000000000dd31d       0xe2 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(sfp-exceptions.o)
+ .debug_info    0x0000000000000bf0     0x11fe main.o
+ .debug_info    0x0000000000001dee      0x368 suppress.o
+ .debug_info    0x0000000000002156    0x25435 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+ .debug_info    0x000000000002758b    0x1cfac /opt/devkitpro/libnx/lib/libnx.a(hid.o)
+ .debug_info    0x0000000000044537     0xccb9 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+ .debug_info    0x00000000000511f0    0x341c1 /opt/devkitpro/libnx/lib/libnx.a(set.o)
+ .debug_info    0x00000000000853b1     0x485d /opt/devkitpro/libnx/lib/libnx.a(sm.o)
+ .debug_info    0x0000000000089c0e      0x1e8 /opt/devkitpro/libnx/lib/libnx.a(alloc.o)
+ .debug_info    0x0000000000089df6      0x197 /opt/devkitpro/libnx/lib/libnx.a(diag.o)
+ .debug_info    0x0000000000089f8d      0x133 /opt/devkitpro/libnx/lib/libnx.a(hosversion.o)
+ .debug_info    0x000000000008a0c0     0x595a /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ .debug_info    0x000000000008fa1a       0x96 /opt/devkitpro/libnx/lib/libnx.a(path_buf.o)
+ .debug_info    0x000000000008fab0      0x177 /opt/devkitpro/libnx/lib/libnx.a(decode_utf8.o)
+ .debug_info    0x000000000008fc27       0x23 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+ .debug_info    0x000000000008fc4a       0x28 /opt/devkitpro/libnx/lib/libnx.a(readtp.o)
+ .debug_info    0x000000000008fc72       0x29 /opt/devkitpro/libnx/lib/libnx.a(switch_crt0.o)
+ .debug_info    0x000000000008fc9b      0x732 /opt/devkitpro/libnx/lib/libnx.a(event.o)
+ .debug_info    0x00000000000903cd      0xa6e /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
+ .debug_info    0x0000000000090e3b      0x5cd /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
+ .debug_info    0x0000000000091408      0x95c /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
+ .debug_info    0x0000000000091d64     0x11e5 /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
+ .debug_info    0x0000000000092f49     0x100a /opt/devkitpro/libnx/lib/libnx.a(wait.o)
+ .debug_info    0x0000000000093f53     0x12b1 /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
+ .debug_info    0x0000000000095204    0x35f50 /opt/devkitpro/libnx/lib/libnx.a(applet.o)
+ .debug_info    0x00000000000cb154     0x7a37 /opt/devkitpro/libnx/lib/libnx.a(time.o)
+ .debug_info    0x00000000000d2b8b      0x4fa /opt/devkitpro/libnx/lib/libnx.a(argv.o)
+ .debug_info    0x00000000000d3085      0x94b /opt/devkitpro/libnx/lib/libnx.a(dynamic.o)
+ .debug_info    0x00000000000d39d0      0x9b6 /opt/devkitpro/libnx/lib/libnx.a(env.o)
+ .debug_info    0x00000000000d4386      0xd1d /opt/devkitpro/libnx/lib/libnx.a(init.o)
+ .debug_info    0x00000000000d50a3     0x263b /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
+ .debug_info    0x00000000000d76de      0x1e1 /opt/devkitpro/libnx/lib/libnx.a(nxlink.o)
+ .debug_info    0x00000000000d78bf       0x23 /opt/devkitpro/libnx/lib/libnx.a(exception.o)
+ .debug_info    0x00000000000d78e2      0x395 /opt/devkitpro/libnx/lib/libnx.a(condvar.o)
+ .debug_info    0x00000000000d7c77      0x9b3 /opt/devkitpro/libnx/lib/libnx.a(random.o)
+ .debug_info    0x00000000000d862a     0x1ca4 /opt/devkitpro/libnx/lib/libnx.a(thread.o)
+ .debug_info    0x00000000000da2ce     0x2e17 /opt/devkitpro/libnx/lib/libnx.a(apm.o)
+ .debug_info    0x00000000000dd0e5      0x38f /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(trunctfdf2.o)
+ .debug_info    0x00000000000dd474       0xe2 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(sfp-exceptions.o)
 
-.debug_abbrev   0x0000000000000000     0x7842
+.debug_abbrev   0x0000000000000000     0x7853
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x26e config.o
- .debug_abbrev  0x000000000000026e      0x42b main.o
- .debug_abbrev  0x0000000000000699      0x18b suppress.o
- .debug_abbrev  0x0000000000000824      0x6b9 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
- .debug_abbrev  0x0000000000000edd      0x7d9 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
- .debug_abbrev  0x00000000000016b6      0x69d /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
- .debug_abbrev  0x0000000000001d53      0x674 /opt/devkitpro/libnx/lib/libnx.a(set.o)
- .debug_abbrev  0x00000000000023c7      0x572 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
- .debug_abbrev  0x0000000000002939      0x121 /opt/devkitpro/libnx/lib/libnx.a(alloc.o)
- .debug_abbrev  0x0000000000002a5a       0xd3 /opt/devkitpro/libnx/lib/libnx.a(diag.o)
- .debug_abbrev  0x0000000000002b2d       0xa7 /opt/devkitpro/libnx/lib/libnx.a(hosversion.o)
- .debug_abbrev  0x0000000000002bd4      0x6bf /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- .debug_abbrev  0x0000000000003293       0x5e /opt/devkitpro/libnx/lib/libnx.a(path_buf.o)
- .debug_abbrev  0x00000000000032f1       0x99 /opt/devkitpro/libnx/lib/libnx.a(decode_utf8.o)
- .debug_abbrev  0x000000000000338a       0x12 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
- .debug_abbrev  0x000000000000339c       0x14 /opt/devkitpro/libnx/lib/libnx.a(readtp.o)
- .debug_abbrev  0x00000000000033b0       0x14 /opt/devkitpro/libnx/lib/libnx.a(switch_crt0.o)
- .debug_abbrev  0x00000000000033c4      0x2b6 /opt/devkitpro/libnx/lib/libnx.a(event.o)
- .debug_abbrev  0x000000000000367a      0x2c4 /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
- .debug_abbrev  0x000000000000393e      0x20c /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
- .debug_abbrev  0x0000000000003b4a      0x249 /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
- .debug_abbrev  0x0000000000003d93      0x35f /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
- .debug_abbrev  0x00000000000040f2      0x34b /opt/devkitpro/libnx/lib/libnx.a(wait.o)
- .debug_abbrev  0x000000000000443d      0x3dd /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
- .debug_abbrev  0x000000000000481a      0x7f5 /opt/devkitpro/libnx/lib/libnx.a(applet.o)
- .debug_abbrev  0x000000000000500f      0x5ca /opt/devkitpro/libnx/lib/libnx.a(time.o)
- .debug_abbrev  0x00000000000055d9      0x1b9 /opt/devkitpro/libnx/lib/libnx.a(argv.o)
- .debug_abbrev  0x0000000000005792      0x2e5 /opt/devkitpro/libnx/lib/libnx.a(dynamic.o)
- .debug_abbrev  0x0000000000005a77      0x2b1 /opt/devkitpro/libnx/lib/libnx.a(env.o)
- .debug_abbrev  0x0000000000005d28      0x359 /opt/devkitpro/libnx/lib/libnx.a(init.o)
- .debug_abbrev  0x0000000000006081      0x61a /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
- .debug_abbrev  0x000000000000669b       0xf4 /opt/devkitpro/libnx/lib/libnx.a(nxlink.o)
- .debug_abbrev  0x000000000000678f       0x12 /opt/devkitpro/libnx/lib/libnx.a(exception.o)
- .debug_abbrev  0x00000000000067a1      0x1ab /opt/devkitpro/libnx/lib/libnx.a(condvar.o)
- .debug_abbrev  0x000000000000694c      0x2ee /opt/devkitpro/libnx/lib/libnx.a(random.o)
- .debug_abbrev  0x0000000000006c3a      0x5bd /opt/devkitpro/libnx/lib/libnx.a(thread.o)
- .debug_abbrev  0x00000000000071f7      0x43a /opt/devkitpro/libnx/lib/libnx.a(apm.o)
- .debug_abbrev  0x0000000000007631      0x189 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(trunctfdf2.o)
- .debug_abbrev  0x00000000000077ba       0x88 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(sfp-exceptions.o)
+ .debug_abbrev  0x000000000000026e      0x43c main.o
+ .debug_abbrev  0x00000000000006aa      0x18b suppress.o
+ .debug_abbrev  0x0000000000000835      0x6b9 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+ .debug_abbrev  0x0000000000000eee      0x7d9 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
+ .debug_abbrev  0x00000000000016c7      0x69d /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+ .debug_abbrev  0x0000000000001d64      0x674 /opt/devkitpro/libnx/lib/libnx.a(set.o)
+ .debug_abbrev  0x00000000000023d8      0x572 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
+ .debug_abbrev  0x000000000000294a      0x121 /opt/devkitpro/libnx/lib/libnx.a(alloc.o)
+ .debug_abbrev  0x0000000000002a6b       0xd3 /opt/devkitpro/libnx/lib/libnx.a(diag.o)
+ .debug_abbrev  0x0000000000002b3e       0xa7 /opt/devkitpro/libnx/lib/libnx.a(hosversion.o)
+ .debug_abbrev  0x0000000000002be5      0x6bf /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ .debug_abbrev  0x00000000000032a4       0x5e /opt/devkitpro/libnx/lib/libnx.a(path_buf.o)
+ .debug_abbrev  0x0000000000003302       0x99 /opt/devkitpro/libnx/lib/libnx.a(decode_utf8.o)
+ .debug_abbrev  0x000000000000339b       0x12 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+ .debug_abbrev  0x00000000000033ad       0x14 /opt/devkitpro/libnx/lib/libnx.a(readtp.o)
+ .debug_abbrev  0x00000000000033c1       0x14 /opt/devkitpro/libnx/lib/libnx.a(switch_crt0.o)
+ .debug_abbrev  0x00000000000033d5      0x2b6 /opt/devkitpro/libnx/lib/libnx.a(event.o)
+ .debug_abbrev  0x000000000000368b      0x2c4 /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
+ .debug_abbrev  0x000000000000394f      0x20c /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
+ .debug_abbrev  0x0000000000003b5b      0x249 /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
+ .debug_abbrev  0x0000000000003da4      0x35f /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
+ .debug_abbrev  0x0000000000004103      0x34b /opt/devkitpro/libnx/lib/libnx.a(wait.o)
+ .debug_abbrev  0x000000000000444e      0x3dd /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
+ .debug_abbrev  0x000000000000482b      0x7f5 /opt/devkitpro/libnx/lib/libnx.a(applet.o)
+ .debug_abbrev  0x0000000000005020      0x5ca /opt/devkitpro/libnx/lib/libnx.a(time.o)
+ .debug_abbrev  0x00000000000055ea      0x1b9 /opt/devkitpro/libnx/lib/libnx.a(argv.o)
+ .debug_abbrev  0x00000000000057a3      0x2e5 /opt/devkitpro/libnx/lib/libnx.a(dynamic.o)
+ .debug_abbrev  0x0000000000005a88      0x2b1 /opt/devkitpro/libnx/lib/libnx.a(env.o)
+ .debug_abbrev  0x0000000000005d39      0x359 /opt/devkitpro/libnx/lib/libnx.a(init.o)
+ .debug_abbrev  0x0000000000006092      0x61a /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
+ .debug_abbrev  0x00000000000066ac       0xf4 /opt/devkitpro/libnx/lib/libnx.a(nxlink.o)
+ .debug_abbrev  0x00000000000067a0       0x12 /opt/devkitpro/libnx/lib/libnx.a(exception.o)
+ .debug_abbrev  0x00000000000067b2      0x1ab /opt/devkitpro/libnx/lib/libnx.a(condvar.o)
+ .debug_abbrev  0x000000000000695d      0x2ee /opt/devkitpro/libnx/lib/libnx.a(random.o)
+ .debug_abbrev  0x0000000000006c4b      0x5bd /opt/devkitpro/libnx/lib/libnx.a(thread.o)
+ .debug_abbrev  0x0000000000007208      0x43a /opt/devkitpro/libnx/lib/libnx.a(apm.o)
+ .debug_abbrev  0x0000000000007642      0x189 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(trunctfdf2.o)
+ .debug_abbrev  0x00000000000077cb       0x88 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(sfp-exceptions.o)
 
-.debug_line     0x0000000000000000    0x60ce4
+.debug_line     0x0000000000000000    0x60cde
  *(.debug_line)
  .debug_line    0x0000000000000000      0x1c3 config.o
- .debug_line    0x00000000000001c3      0x445 main.o
- .debug_line    0x0000000000000608       0xb9 suppress.o
- .debug_line    0x00000000000006c1    0x11eac /opt/devkitpro/libnx/lib/libnx.a(fs.o)
- .debug_line    0x000000000001256d     0xbec3 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
- .debug_line    0x000000000001e430     0x4d20 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
- .debug_line    0x0000000000023150    0x16afd /opt/devkitpro/libnx/lib/libnx.a(set.o)
- .debug_line    0x0000000000039c4d     0x1630 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
- .debug_line    0x000000000003b27d       0xa2 /opt/devkitpro/libnx/lib/libnx.a(alloc.o)
- .debug_line    0x000000000003b31f       0x82 /opt/devkitpro/libnx/lib/libnx.a(diag.o)
- .debug_line    0x000000000003b3a1       0xad /opt/devkitpro/libnx/lib/libnx.a(hosversion.o)
- .debug_line    0x000000000003b44e     0x2388 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
- .debug_line    0x000000000003d7d6       0x3f /opt/devkitpro/libnx/lib/libnx.a(path_buf.o)
- .debug_line    0x000000000003d815      0x1a8 /opt/devkitpro/libnx/lib/libnx.a(decode_utf8.o)
- .debug_line    0x000000000003d9bd      0xb3f /opt/devkitpro/libnx/lib/libnx.a(svc.o)
- .debug_line    0x000000000003e4fc       0x4d /opt/devkitpro/libnx/lib/libnx.a(readtp.o)
- .debug_line    0x000000000003e549       0x69 /opt/devkitpro/libnx/lib/libnx.a(switch_crt0.o)
- .debug_line    0x000000000003e5b2      0x217 /opt/devkitpro/libnx/lib/libnx.a(event.o)
- .debug_line    0x000000000003e7c9      0x4db /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
- .debug_line    0x000000000003eca4      0x1e7 /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
- .debug_line    0x000000000003ee8b      0x357 /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
- .debug_line    0x000000000003f1e2      0x5f7 /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
- .debug_line    0x000000000003f7d9      0x8a4 /opt/devkitpro/libnx/lib/libnx.a(wait.o)
- .debug_line    0x000000000004007d      0x4a9 /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
- .debug_line    0x0000000000040526    0x197dc /opt/devkitpro/libnx/lib/libnx.a(applet.o)
- .debug_line    0x0000000000059d02     0x2f63 /opt/devkitpro/libnx/lib/libnx.a(time.o)
- .debug_line    0x000000000005cc65      0x3fb /opt/devkitpro/libnx/lib/libnx.a(argv.o)
- .debug_line    0x000000000005d060      0x2e6 /opt/devkitpro/libnx/lib/libnx.a(dynamic.o)
- .debug_line    0x000000000005d346      0x50a /opt/devkitpro/libnx/lib/libnx.a(env.o)
- .debug_line    0x000000000005d850      0x31b /opt/devkitpro/libnx/lib/libnx.a(init.o)
- .debug_line    0x000000000005db6b      0xc7d /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
- .debug_line    0x000000000005e7e8       0xfb /opt/devkitpro/libnx/lib/libnx.a(nxlink.o)
- .debug_line    0x000000000005e8e3       0xd5 /opt/devkitpro/libnx/lib/libnx.a(exception.o)
- .debug_line    0x000000000005e9b8      0x113 /opt/devkitpro/libnx/lib/libnx.a(condvar.o)
- .debug_line    0x000000000005eacb      0x3bd /opt/devkitpro/libnx/lib/libnx.a(random.o)
- .debug_line    0x000000000005ee88      0x932 /opt/devkitpro/libnx/lib/libnx.a(thread.o)
- .debug_line    0x000000000005f7ba      0xc24 /opt/devkitpro/libnx/lib/libnx.a(apm.o)
- .debug_line    0x00000000000603de      0x86e /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(trunctfdf2.o)
- .debug_line    0x0000000000060c4c       0x98 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(sfp-exceptions.o)
+ .debug_line    0x00000000000001c3      0x43f main.o
+ .debug_line    0x0000000000000602       0xb9 suppress.o
+ .debug_line    0x00000000000006bb    0x11eac /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+ .debug_line    0x0000000000012567     0xbec3 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
+ .debug_line    0x000000000001e42a     0x4d20 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+ .debug_line    0x000000000002314a    0x16afd /opt/devkitpro/libnx/lib/libnx.a(set.o)
+ .debug_line    0x0000000000039c47     0x1630 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
+ .debug_line    0x000000000003b277       0xa2 /opt/devkitpro/libnx/lib/libnx.a(alloc.o)
+ .debug_line    0x000000000003b319       0x82 /opt/devkitpro/libnx/lib/libnx.a(diag.o)
+ .debug_line    0x000000000003b39b       0xad /opt/devkitpro/libnx/lib/libnx.a(hosversion.o)
+ .debug_line    0x000000000003b448     0x2388 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+ .debug_line    0x000000000003d7d0       0x3f /opt/devkitpro/libnx/lib/libnx.a(path_buf.o)
+ .debug_line    0x000000000003d80f      0x1a8 /opt/devkitpro/libnx/lib/libnx.a(decode_utf8.o)
+ .debug_line    0x000000000003d9b7      0xb3f /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+ .debug_line    0x000000000003e4f6       0x4d /opt/devkitpro/libnx/lib/libnx.a(readtp.o)
+ .debug_line    0x000000000003e543       0x69 /opt/devkitpro/libnx/lib/libnx.a(switch_crt0.o)
+ .debug_line    0x000000000003e5ac      0x217 /opt/devkitpro/libnx/lib/libnx.a(event.o)
+ .debug_line    0x000000000003e7c3      0x4db /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
+ .debug_line    0x000000000003ec9e      0x1e7 /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
+ .debug_line    0x000000000003ee85      0x357 /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
+ .debug_line    0x000000000003f1dc      0x5f7 /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
+ .debug_line    0x000000000003f7d3      0x8a4 /opt/devkitpro/libnx/lib/libnx.a(wait.o)
+ .debug_line    0x0000000000040077      0x4a9 /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
+ .debug_line    0x0000000000040520    0x197dc /opt/devkitpro/libnx/lib/libnx.a(applet.o)
+ .debug_line    0x0000000000059cfc     0x2f63 /opt/devkitpro/libnx/lib/libnx.a(time.o)
+ .debug_line    0x000000000005cc5f      0x3fb /opt/devkitpro/libnx/lib/libnx.a(argv.o)
+ .debug_line    0x000000000005d05a      0x2e6 /opt/devkitpro/libnx/lib/libnx.a(dynamic.o)
+ .debug_line    0x000000000005d340      0x50a /opt/devkitpro/libnx/lib/libnx.a(env.o)
+ .debug_line    0x000000000005d84a      0x31b /opt/devkitpro/libnx/lib/libnx.a(init.o)
+ .debug_line    0x000000000005db65      0xc7d /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
+ .debug_line    0x000000000005e7e2       0xfb /opt/devkitpro/libnx/lib/libnx.a(nxlink.o)
+ .debug_line    0x000000000005e8dd       0xd5 /opt/devkitpro/libnx/lib/libnx.a(exception.o)
+ .debug_line    0x000000000005e9b2      0x113 /opt/devkitpro/libnx/lib/libnx.a(condvar.o)
+ .debug_line    0x000000000005eac5      0x3bd /opt/devkitpro/libnx/lib/libnx.a(random.o)
+ .debug_line    0x000000000005ee82      0x932 /opt/devkitpro/libnx/lib/libnx.a(thread.o)
+ .debug_line    0x000000000005f7b4      0xc24 /opt/devkitpro/libnx/lib/libnx.a(apm.o)
+ .debug_line    0x00000000000603d8      0x86e /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(trunctfdf2.o)
+ .debug_line    0x0000000000060c46       0x98 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(sfp-exceptions.o)
 
 .debug_frame
  *(.debug_frame)
@@ -5554,7 +5553,7 @@ Linker script and memory map
  .debug_str     0x0000000000000000    0x1558a config.o
                                         0x587 (size before relaxing)
  .debug_str     0x000000000001558a        0x0 main.o
-                                       0x115f (size before relaxing)
+                                       0x14c6 (size before relaxing)
  .debug_str     0x000000000001558a        0x0 suppress.o
                                         0x2c5 (size before relaxing)
  .debug_str     0x000000000001558a        0x0 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
@@ -5653,146 +5652,146 @@ OUTPUT(/home/kaze/PhantomCtrl/sysmodule/PhantomCtrl.elf elf64-littleaarch64)
 LOAD linker stubs
 
 .debug_loclists
-                0x0000000000000000    0xcaaf0
+                0x0000000000000000    0xcaadd
  .debug_loclists
                 0x0000000000000000      0x16a config.o
  .debug_loclists
-                0x000000000000016a      0x1f0 main.o
+                0x000000000000016a      0x1dd main.o
  .debug_loclists
-                0x000000000000035a       0x46 suppress.o
+                0x0000000000000347       0x46 suppress.o
  .debug_loclists
-                0x00000000000003a0    0x2ebc8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x000000000000038d    0x2ebc8 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
  .debug_loclists
-                0x000000000002ef68    0x1b49e /opt/devkitpro/libnx/lib/libnx.a(hid.o)
+                0x000000000002ef55    0x1b49e /opt/devkitpro/libnx/lib/libnx.a(hid.o)
  .debug_loclists
-                0x000000000004a406     0xa8c2 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+                0x000000000004a3f3     0xa8c2 /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
  .debug_loclists
-                0x0000000000054cc8    0x35fe2 /opt/devkitpro/libnx/lib/libnx.a(set.o)
+                0x0000000000054cb5    0x35fe2 /opt/devkitpro/libnx/lib/libnx.a(set.o)
  .debug_loclists
-                0x000000000008acaa     0x27a4 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
+                0x000000000008ac97     0x27a4 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
  .debug_loclists
-                0x000000000008d44e       0x97 /opt/devkitpro/libnx/lib/libnx.a(alloc.o)
+                0x000000000008d43b       0x97 /opt/devkitpro/libnx/lib/libnx.a(alloc.o)
  .debug_loclists
-                0x000000000008d4e5       0x25 /opt/devkitpro/libnx/lib/libnx.a(diag.o)
+                0x000000000008d4d2       0x25 /opt/devkitpro/libnx/lib/libnx.a(diag.o)
  .debug_loclists
-                0x000000000008d50a     0x2b8b /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+                0x000000000008d4f7     0x2b8b /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
  .debug_loclists
-                0x0000000000090095      0x1c6 /opt/devkitpro/libnx/lib/libnx.a(decode_utf8.o)
+                0x0000000000090082      0x1c6 /opt/devkitpro/libnx/lib/libnx.a(decode_utf8.o)
  .debug_loclists
-                0x000000000009025b      0x134 /opt/devkitpro/libnx/lib/libnx.a(event.o)
+                0x0000000000090248      0x134 /opt/devkitpro/libnx/lib/libnx.a(event.o)
  .debug_loclists
-                0x000000000009038f      0x2ec /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
+                0x000000000009037c      0x2ec /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
  .debug_loclists
-                0x000000000009067b      0x170 /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
+                0x0000000000090668      0x170 /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
  .debug_loclists
-                0x00000000000907eb      0x36a /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
+                0x00000000000907d8      0x36a /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
  .debug_loclists
-                0x0000000000090b55      0x73a /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
+                0x0000000000090b42      0x73a /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
  .debug_loclists
-                0x000000000009128f      0xb95 /opt/devkitpro/libnx/lib/libnx.a(wait.o)
+                0x000000000009127c      0xb95 /opt/devkitpro/libnx/lib/libnx.a(wait.o)
  .debug_loclists
-                0x0000000000091e24      0x728 /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
+                0x0000000000091e11      0x728 /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
  .debug_loclists
-                0x000000000009254c    0x2defe /opt/devkitpro/libnx/lib/libnx.a(applet.o)
+                0x0000000000092539    0x2defe /opt/devkitpro/libnx/lib/libnx.a(applet.o)
  .debug_loclists
-                0x00000000000c044a     0x674f /opt/devkitpro/libnx/lib/libnx.a(time.o)
+                0x00000000000c0437     0x674f /opt/devkitpro/libnx/lib/libnx.a(time.o)
  .debug_loclists
-                0x00000000000c6b99      0x37c /opt/devkitpro/libnx/lib/libnx.a(argv.o)
+                0x00000000000c6b86      0x37c /opt/devkitpro/libnx/lib/libnx.a(argv.o)
  .debug_loclists
-                0x00000000000c6f15      0x311 /opt/devkitpro/libnx/lib/libnx.a(dynamic.o)
+                0x00000000000c6f02      0x311 /opt/devkitpro/libnx/lib/libnx.a(dynamic.o)
  .debug_loclists
-                0x00000000000c7226      0x1aa /opt/devkitpro/libnx/lib/libnx.a(env.o)
+                0x00000000000c7213      0x1aa /opt/devkitpro/libnx/lib/libnx.a(env.o)
  .debug_loclists
-                0x00000000000c73d0      0x16d /opt/devkitpro/libnx/lib/libnx.a(init.o)
+                0x00000000000c73bd      0x16d /opt/devkitpro/libnx/lib/libnx.a(init.o)
  .debug_loclists
-                0x00000000000c753d      0xafe /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
+                0x00000000000c752a      0xafe /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
  .debug_loclists
-                0x00000000000c803b       0xb2 /opt/devkitpro/libnx/lib/libnx.a(condvar.o)
+                0x00000000000c8028       0xb2 /opt/devkitpro/libnx/lib/libnx.a(condvar.o)
  .debug_loclists
-                0x00000000000c80ed      0x1b9 /opt/devkitpro/libnx/lib/libnx.a(random.o)
+                0x00000000000c80da      0x1b9 /opt/devkitpro/libnx/lib/libnx.a(random.o)
  .debug_loclists
-                0x00000000000c82a6      0x89e /opt/devkitpro/libnx/lib/libnx.a(thread.o)
+                0x00000000000c8293      0x89e /opt/devkitpro/libnx/lib/libnx.a(thread.o)
  .debug_loclists
-                0x00000000000c8b44     0x1728 /opt/devkitpro/libnx/lib/libnx.a(apm.o)
+                0x00000000000c8b31     0x1728 /opt/devkitpro/libnx/lib/libnx.a(apm.o)
  .debug_loclists
-                0x00000000000ca26c      0x85d /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(trunctfdf2.o)
+                0x00000000000ca259      0x85d /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(trunctfdf2.o)
  .debug_loclists
-                0x00000000000caac9       0x27 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(sfp-exceptions.o)
+                0x00000000000caab6       0x27 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(sfp-exceptions.o)
 
 .debug_rnglists
-                0x0000000000000000    0x1fab9
+                0x0000000000000000    0x1fab5
  .debug_rnglists
                 0x0000000000000000       0x3e config.o
  .debug_rnglists
-                0x000000000000003e       0xe2 main.o
+                0x000000000000003e       0xde main.o
  .debug_rnglists
-                0x0000000000000120       0x17 suppress.o
+                0x000000000000011c       0x17 suppress.o
  .debug_rnglists
-                0x0000000000000137     0x6ae1 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
+                0x0000000000000133     0x6ae1 /opt/devkitpro/libnx/lib/libnx.a(fs.o)
  .debug_rnglists
-                0x0000000000006c18     0x3eb8 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
+                0x0000000000006c14     0x3eb8 /opt/devkitpro/libnx/lib/libnx.a(hid.o)
  .debug_rnglists
-                0x000000000000aad0     0x1a0e /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
+                0x000000000000aacc     0x1a0e /opt/devkitpro/libnx/lib/libnx.a(hiddbg.o)
  .debug_rnglists
-                0x000000000000c4de     0x831f /opt/devkitpro/libnx/lib/libnx.a(set.o)
+                0x000000000000c4da     0x831f /opt/devkitpro/libnx/lib/libnx.a(set.o)
  .debug_rnglists
-                0x00000000000147fd      0x767 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
+                0x00000000000147f9      0x767 /opt/devkitpro/libnx/lib/libnx.a(sm.o)
  .debug_rnglists
-                0x0000000000014f64       0x2b /opt/devkitpro/libnx/lib/libnx.a(alloc.o)
+                0x0000000000014f60       0x2b /opt/devkitpro/libnx/lib/libnx.a(alloc.o)
  .debug_rnglists
-                0x0000000000014f8f       0x17 /opt/devkitpro/libnx/lib/libnx.a(diag.o)
+                0x0000000000014f8b       0x17 /opt/devkitpro/libnx/lib/libnx.a(diag.o)
  .debug_rnglists
-                0x0000000000014fa6       0x2b /opt/devkitpro/libnx/lib/libnx.a(hosversion.o)
+                0x0000000000014fa2       0x2b /opt/devkitpro/libnx/lib/libnx.a(hosversion.o)
  .debug_rnglists
-                0x0000000000014fd1      0x551 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
+                0x0000000000014fcd      0x551 /opt/devkitpro/libnx/lib/libnx.a(fs_dev.o)
  .debug_rnglists
-                0x0000000000015522       0x18 /opt/devkitpro/libnx/lib/libnx.a(decode_utf8.o)
+                0x000000000001551e       0x18 /opt/devkitpro/libnx/lib/libnx.a(decode_utf8.o)
  .debug_rnglists
-                0x000000000001553a      0x503 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
+                0x0000000000015536      0x503 /opt/devkitpro/libnx/lib/libnx.a(svc.o)
  .debug_rnglists
-                0x0000000000015a3d       0x6f /opt/devkitpro/libnx/lib/libnx.a(event.o)
+                0x0000000000015a39       0x6f /opt/devkitpro/libnx/lib/libnx.a(event.o)
  .debug_rnglists
-                0x0000000000015aac       0xed /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
+                0x0000000000015aa8       0xed /opt/devkitpro/libnx/lib/libnx.a(mutex.o)
  .debug_rnglists
-                0x0000000000015b99       0x3f /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
+                0x0000000000015b95       0x3f /opt/devkitpro/libnx/lib/libnx.a(shmem.o)
  .debug_rnglists
-                0x0000000000015bd8       0x5f /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
+                0x0000000000015bd4       0x5f /opt/devkitpro/libnx/lib/libnx.a(tmem.o)
  .debug_rnglists
-                0x0000000000015c37      0x13b /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
+                0x0000000000015c33      0x13b /opt/devkitpro/libnx/lib/libnx.a(virtmem.o)
  .debug_rnglists
-                0x0000000000015d72      0x21b /opt/devkitpro/libnx/lib/libnx.a(wait.o)
+                0x0000000000015d6e      0x21b /opt/devkitpro/libnx/lib/libnx.a(wait.o)
  .debug_rnglists
-                0x0000000000015f8d      0x11c /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
+                0x0000000000015f89      0x11c /opt/devkitpro/libnx/lib/libnx.a(sessionmgr.o)
  .debug_rnglists
-                0x00000000000160a9     0x7ead /opt/devkitpro/libnx/lib/libnx.a(applet.o)
+                0x00000000000160a5     0x7ead /opt/devkitpro/libnx/lib/libnx.a(applet.o)
  .debug_rnglists
-                0x000000000001df56     0x107c /opt/devkitpro/libnx/lib/libnx.a(time.o)
+                0x000000000001df52     0x107c /opt/devkitpro/libnx/lib/libnx.a(time.o)
  .debug_rnglists
-                0x000000000001efd2       0x18 /opt/devkitpro/libnx/lib/libnx.a(argv.o)
+                0x000000000001efce       0x18 /opt/devkitpro/libnx/lib/libnx.a(argv.o)
  .debug_rnglists
-                0x000000000001efea       0x7b /opt/devkitpro/libnx/lib/libnx.a(dynamic.o)
+                0x000000000001efe6       0x7b /opt/devkitpro/libnx/lib/libnx.a(dynamic.o)
  .debug_rnglists
-                0x000000000001f065       0xeb /opt/devkitpro/libnx/lib/libnx.a(env.o)
+                0x000000000001f061       0xeb /opt/devkitpro/libnx/lib/libnx.a(env.o)
  .debug_rnglists
-                0x000000000001f150       0x57 /opt/devkitpro/libnx/lib/libnx.a(init.o)
+                0x000000000001f14c       0x57 /opt/devkitpro/libnx/lib/libnx.a(init.o)
  .debug_rnglists
-                0x000000000001f1a7      0x1d1 /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
+                0x000000000001f1a3      0x1d1 /opt/devkitpro/libnx/lib/libnx.a(newlib.o)
  .debug_rnglists
-                0x000000000001f378       0x18 /opt/devkitpro/libnx/lib/libnx.a(nxlink.o)
+                0x000000000001f374       0x18 /opt/devkitpro/libnx/lib/libnx.a(nxlink.o)
  .debug_rnglists
-                0x000000000001f390       0x22 /opt/devkitpro/libnx/lib/libnx.a(exception.o)
+                0x000000000001f38c       0x22 /opt/devkitpro/libnx/lib/libnx.a(exception.o)
  .debug_rnglists
-                0x000000000001f3b2       0x27 /opt/devkitpro/libnx/lib/libnx.a(condvar.o)
+                0x000000000001f3ae       0x27 /opt/devkitpro/libnx/lib/libnx.a(condvar.o)
  .debug_rnglists
-                0x000000000001f3d9       0x59 /opt/devkitpro/libnx/lib/libnx.a(random.o)
+                0x000000000001f3d5       0x59 /opt/devkitpro/libnx/lib/libnx.a(random.o)
  .debug_rnglists
-                0x000000000001f432      0x155 /opt/devkitpro/libnx/lib/libnx.a(thread.o)
+                0x000000000001f42e      0x155 /opt/devkitpro/libnx/lib/libnx.a(thread.o)
  .debug_rnglists
-                0x000000000001f587      0x422 /opt/devkitpro/libnx/lib/libnx.a(apm.o)
+                0x000000000001f583      0x422 /opt/devkitpro/libnx/lib/libnx.a(apm.o)
  .debug_rnglists
-                0x000000000001f9a9       0xf9 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(trunctfdf2.o)
+                0x000000000001f9a5       0xf9 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(trunctfdf2.o)
  .debug_rnglists
-                0x000000000001faa2       0x17 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(sfp-exceptions.o)
+                0x000000000001fa9e       0x17 /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/16.1.0/pic/libgcc.a(sfp-exceptions.o)
 
 .debug_line_str
                 0x0000000000000000     0x250e
