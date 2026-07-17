@@ -33,3 +33,8 @@ dist: all
 	@echo "dist/ ready. Copy its contents to the root of your SD card."
 	@echo ""
 	@echo "Note: Install ovlmenu.ovl from Ultrahand-Overlay release for menu support."
+
+clean:
+	@$(MAKE) --no-print-directory -C sysmodule clean
+	@$(MAKE) --no-print-directory -C overlay clean
+	@rm -rf dist
