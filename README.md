@@ -21,6 +21,7 @@ see status without restarting anything.
   libnx with the fw 13+ Hdls session API).
 - **Virtual pad path is complete** and is the well-trodden part (same core
   mechanism as sys-con / InputRedirection).
+- **Ultrahand overlay is complete** - provides toggle and live status display.
 - Handheld suppression has been **removed** due to crashes on certain firmware
   versions (it used unstable hiddbg API). If a game needs suppression to work,
   it will require a future hid-mitm approach.
@@ -168,10 +169,15 @@ PhantomCtrl/
 │       ├── phantom.h     shared defs + runtime state struct
 │       ├── main.c        init, poll loop, virtual pad feed
 │       └── config.c      SD config-file read/write channel
-└── overlay/
-    ├── Makefile
-    ├── include/          tesla.hpp + stb_truetype.h
-    └── source/main.cpp   Tesla overlay UI
+├── overlay/
+│   ├── Makefile
+│   ├── lib/libultrahand/     symlink to Status-Monitor-Overlay libultrahand
+│   └── source/
+│       └── main.cpp       Ultrahand overlay UI
+└── dist/                    ready-to-copy sd card layout
+    └── switch/.overlays/    PhantomCtrl.ovl
+    └── config/phantomctrl/  config.ini for sysmodule state
+    └── config/ultrahand/  config.ini for Ultrahand settings
 ```
 
 ## Migration to Ultrahand

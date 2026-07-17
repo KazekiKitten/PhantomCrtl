@@ -1,31 +1,29 @@
 #define TESLA_INIT_IMPL
+
+#include <exception_wrap.hpp>
 #include <tesla.hpp>
-
 #include <cstdio>
+#include <cstdlib>
 #include <cstring>
-#include <sys/stat.h>
 
-// Ultrahand compatibility for firmware 16.0.0+
-// This overlay works with both Tesla and Ultrahand loaders
-static constexpr const char *CONFIG_DIR  = "/config/phantomctrl";
-static constexpr const char *CONFIG_PATH = "/config/phantomctrl/config.ini";
+#define PHANTOM_CONFIG_PATH "/config/phantomctrl/config.ini"
 
-struct PhantomView {
-    bool enabled       = true;
+struct PhantomState {
+    bool enabled = true;
     bool virt_attached = false;
-    u64  virt_handle   = 0;
-    u32  wireless_count = 0;
+    u64 virt_handle = 0;
+    u32 wireless_count = 0;
 };
 
-static bool parseBool(const char *v) {
+static PhantomState g_state;
+
+static bool parse_bool(const char *v) {
     return v[0] == '1' || v[0] == 't' || v[0] == 'T' || v[0] == 'y' || v[0] == 'Y';
 }
 
-static PhantomView loadState() {
-    PhantomView pv;
-    FILE *f = fopen(CONFIG_PATH, "r");
-    if (!f)
-        return pv;
+static bool loadPhantomState() {
+    FILE *f = fopen(PHANTOM_CONFIG_PATH, "r");
+    if (!f) return false;
 
     char line[128];
     while (fgets(line, sizeof(line), f)) {
@@ -35,93 +33,110 @@ static PhantomView loadState() {
         const char *key = line;
         const char *val = eq + 1;
 
-        if      (!strncmp(key, "enabled", 7))        pv.enabled = parseBool(val);
-        else if (!strncmp(key, "virt_attached", 13)) pv.virt_attached = parseBool(val);
-        else if (!strncmp(key, "virt_handle", 11))   pv.virt_handle = strtoull(val, nullptr, 16);
-        else if (!strncmp(key, "wireless_count", 14)) pv.wireless_count = (u32)strtoul(val, nullptr, 10);
+        if (strncmp(key, "enabled", 7) == 0)
+            g_state.enabled = parse_bool(val);
+        else if (strncmp(key, "virt_attached", 13) == 0)
+            g_state.virt_attached = parse_bool(val);
+        else if (strncmp(key, "virt_handle", 11) == 0) {
+            char *end;
+            g_state.virt_handle = strtoull(val, &end, 16);
+        }
+        else if (strncmp(key, "wireless_count", 14) == 0) {
+            char *end;
+            g_state.wireless_count = strtoul(val, &end, 10);
+        }
     }
     fclose(f);
-    return pv;
+    return true;
 }
 
-static void saveKnobs(bool enabled) {
-    mkdir(CONFIG_DIR, 0777);
-    FILE *f = fopen(CONFIG_PATH, "w");
+static void savePhantomState() {
+    FILE *f = fopen(PHANTOM_CONFIG_PATH, "w");
     if (!f) return;
-    fprintf(f, "enabled=%d\n", enabled ? 1 : 0);
+
+    fprintf(f, "enabled=%d\n", g_state.enabled ? 1 : 0);
     fclose(f);
 }
 
-class PhantomGui : public tsl::Gui {
+class PhantomCtrlMenu : public tsl::Gui {
+private:
+    tsl::elm::ListItem* m_toggleItem;
+    tsl::elm::ListItem* m_statusItem;
+    tsl::elm::ListItem* m_wirelessItem;
+
 public:
-    PhantomGui() { m_state = loadState(); }
+    PhantomCtrlMenu() : m_toggleItem(nullptr), m_statusItem(nullptr), m_wirelessItem(nullptr) {}
 
     virtual tsl::elm::Element* createUI() override {
-        auto *frame = new tsl::elm::OverlayFrame("PhantomCtrl", "v1.0.0");
-        auto *list  = new tsl::elm::List();
+        auto *list = new tsl::elm::List();
 
-        list->addItem(new tsl::elm::CategoryHeader("Control"));
+        list->addItem(new tsl::elm::CategoryHeader("PhantomCtrl"));
 
-        auto *enableToggle = new tsl::elm::ToggleListItem("PhantomCtrl", m_state.enabled);
-        enableToggle->setStateChangedListener([this](bool on) {
-            m_state.enabled = on;
-            saveKnobs(m_state.enabled);
+        m_toggleItem = new tsl::elm::ListItem("Enabled");
+        m_toggleItem->setValue(g_state.enabled ? "ON" : "OFF");
+        m_toggleItem->setClickListener([this](u64 keys) {
+            if (keys & KEY_A) {
+                g_state.enabled = !g_state.enabled;
+                savePhantomState();
+                m_toggleItem->setValue(g_state.enabled ? "ON" : "OFF");
+                return true;
+            }
+            return false;
         });
-        list->addItem(enableToggle);
+        list->addItem(m_toggleItem);
 
-        list->addItem(new tsl::elm::CategoryHeader("Status"));
+        m_statusItem = new tsl::elm::ListItem("Status");
+        std::string status = (g_state.virt_attached) 
+            ? ("Handle: 0x" + std::to_string(g_state.virt_handle)) 
+            : "Detached";
+        m_statusItem->setValue(status);
+        list->addItem(m_statusItem);
 
-        m_statusVirt = new tsl::elm::ListItem("Virtual pad");
-        list->addItem(m_statusVirt);
+        m_wirelessItem = new tsl::elm::ListItem("Wireless Pads");
+        m_wirelessItem->setValue(std::to_string(g_state.wireless_count));
+        list->addItem(m_wirelessItem);
 
-        m_statusHandle = new tsl::elm::ListItem("Virtual ID");
-        list->addItem(m_statusHandle);
+        auto *rootFrame = new tsl::elm::HeaderOverlayFrame(97);
+        rootFrame->setContent(list);
 
-        m_statusWireless = new tsl::elm::ListItem("Wireless pads");
-        list->addItem(m_statusWireless);
-
-        refreshStatus();
-        frame->setContent(list);
-        return frame;
+        return rootFrame;
     }
 
     virtual void update() override {
-        PhantomView fresh = loadState();
-        fresh.enabled = m_state.enabled;
-        m_state = fresh;
-        refreshStatus();
+        bool changed = loadPhantomState();
+        if (changed) {
+            if (m_toggleItem)
+                m_toggleItem->setValue(g_state.enabled ? "ON" : "OFF");
+            if (m_statusItem) {
+                std::string status = (g_state.virt_attached) 
+                    ? ("Handle: 0x" + std::to_string(g_state.virt_handle)) 
+                    : "Detached";
+                m_statusItem->setValue(status);
+            }
+            if (m_wirelessItem)
+                m_wirelessItem->setValue(std::to_string(g_state.wireless_count));
+        }
     }
 
-private:
-    void refreshStatus() {
-        if (!m_statusVirt) return;
-        m_statusVirt->setValue(m_state.virt_attached ? "attached" : "detached");
-
-        char idbuf[24];
-        if (m_state.virt_attached)
-            snprintf(idbuf, sizeof(idbuf), "%016lx", m_state.virt_handle);
-        else
-            snprintf(idbuf, sizeof(idbuf), "-");
-        m_statusHandle->setValue(idbuf);
-
-        char wbuf[16];
-        snprintf(wbuf, sizeof(wbuf), "%u", m_state.wireless_count);
-        m_statusWireless->setValue(wbuf);
+    virtual bool handleInput(u64 keysDown, u64 keysHeld, const HidTouchState &touchPos, HidAnalogStickState joyStickPosLeft, HidAnalogStickState joyStickPosRight) override {
+        if (keysDown & KEY_B) {
+            tsl::goBack();
+            return true;
+        }
+        return false;
     }
-
-    PhantomView m_state;
-    tsl::elm::ListItem *m_statusVirt = nullptr;
-    tsl::elm::ListItem *m_statusHandle = nullptr;
-    tsl::elm::ListItem *m_statusWireless = nullptr;
 };
 
-class PhantomOverlay : public tsl::Overlay {
+class PhantomCtrlOverlay : public tsl::Overlay {
 public:
     virtual std::unique_ptr<tsl::Gui> loadInitialGui() override {
-        return initially<PhantomGui>();
+        return initially<PhantomCtrlMenu>();
     }
+
+    virtual void onShow() override {}
+    virtual void onHide() override {}
 };
 
 int main(int argc, char **argv) {
-    return tsl::loop<PhantomOverlay>(argc, argv);
+    return tsl::loop<PhantomCtrlOverlay>(argc, argv);
 }

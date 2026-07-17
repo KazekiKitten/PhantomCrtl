@@ -1,0 +1,16 @@
+build/
+*.elf
+*.o
+*.ovl
+*.nacp
+*.nro
+dist/
+sysmodule/build/
+sysmodule/*.elf
+sysmodule/*.nsp
+sysmodule/*.nso
+sysmodule/*.map
+overlay/build/
+overlay/*.elf
+overlay/*.ovl
+overlay/*.nacp
